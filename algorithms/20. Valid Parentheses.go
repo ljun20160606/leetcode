@@ -1,6 +1,6 @@
 package algorithms
 
-import "github.com/LFZJun/solution-lib/alsolutionrithms/stack"
+import "github.com/LFZJun/go-lib/algorithms/stack"
 
 //Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 //

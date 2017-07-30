@@ -2,8 +2,8 @@ package algorithms
 
 import (
 	"fmt"
-	"github.com/LFZJun/solution-lib/solution/origin"
-	"github.com/davecgh/solution-spew/spew"
+	"github.com/LFZJun/leetcode/algorithms/origin"
+	"github.com/davecgh/go-spew/spew"
 	"testing"
 )
 
@@ -131,6 +131,14 @@ func Test27(t *testing.T) {
 
 func Test28(t *testing.T) {
 	fmt.Println(strStr("a", "a"))
+}
+
+func Test29(t *testing.T) {
+	fmt.Println(divide(6, 0))
+}
+
+func Test30(t *testing.T) {
+	fmt.Println(findSubstring("barfoothefoobarman", []string{"foo", "bar"}))
 }
 
 func Test72(t *testing.T) {
