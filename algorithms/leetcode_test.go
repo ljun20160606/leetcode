@@ -141,6 +141,12 @@ func Test30(t *testing.T) {
 	fmt.Println(findSubstring("barfoothefoobarman", []string{"foo", "bar"}))
 }
 
+func Test31(t *testing.T) {
+	i := []int{1, 3, 2}
+	nextPermutation(i)
+	fmt.Println(i)
+}
+
 func Test72(t *testing.T) {
 	fmt.Println(minDistance("abce", "cde"))
 }

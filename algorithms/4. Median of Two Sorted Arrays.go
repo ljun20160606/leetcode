@@ -23,14 +23,14 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	return (findKth(nums1, nums2, l/2-1) + findKth(nums1, nums2, l/2)) / 2
 }
 
-func min(a, b int) int {
+func minOfTwo(a, b int) int {
 	if a <= b {
 		return a
 	}
 	return b
 }
 
-func max(a, b int) int {
+func maxOfTwo(a, b int) int {
 	if a >= b {
 		return a
 	}
@@ -46,12 +46,12 @@ func findKth(a, b []int, k int) float64 {
 	}
 	switch k {
 	case 0:
-		return float64(min(a[0], b[0]))
+		return float64(minOfTwo(a[0], b[0]))
 	case len(a) + len(b) - 1:
-		return float64(max(a[len(a)-1], b[len(b)-1]))
+		return float64(maxOfTwo(a[len(a)-1], b[len(b)-1]))
 	}
-	pa := min(len(a)-1, k/2) // k/2
-	pb := min(len(b)-1, k-pa) // k - k/2
+	pa := minOfTwo(len(a)-1, k/2)  // k/2
+	pb := minOfTwo(len(b)-1, k-pa) // k - k/2
 	if a[pa] < b[pb] {
 		return findKth(a[pa:], b[:pb], pb)
 	}

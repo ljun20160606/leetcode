@@ -33,5 +33,6 @@ golang
 * [28. Implement strStr()](algorithms/28.%20Implement%20strStr().go)
 * [29. Divide Two Integers](algorithms/29.%20Divide%20Two%20Integers.go)
 * [30. Substring with Concatenation of All Words](algorithms/30.%20Substring%20with%20Concatenation%20of%20All%20Words)
+* [31. Next Permutation](algorithms/31.%20Next%20Permutation.go)
 * [72. Edit Distance](algorithms/72.%20Edit%20Distance.go)
 * [206. Reverse Linked List](algorithms/206.%20Reverse%20Linked%20List.go)
