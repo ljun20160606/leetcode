@@ -42,6 +42,11 @@ func isValidV0(s string) bool {
 }
 
 // 看到的另一种简易栈的实现方式，很有趣
+// 申请len(s)长度的[]byte skt
+// 栈顶top=-1
+// 入栈top+=1
+// 出栈top-=1
+// 取栈顶stk[top]
 func isValid(s string) bool {
 	stk := make([]byte, len(s))
 	top := -1

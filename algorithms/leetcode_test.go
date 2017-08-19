@@ -117,6 +117,10 @@ func Test21(t *testing.T) {
 	spew.Println(mergeTwoLists(&ListNode{2, nil}, &ListNode{1, nil}))
 }
 
+func Test22(t *testing.T) {
+	fmt.Println(generateParenthesis(4))
+}
+
 func Test23(t *testing.T) {
 	spew.Println(mergeKLists([]*ListNode{{2, nil}, {1, nil}}))
 }
@@ -145,6 +149,10 @@ func Test31(t *testing.T) {
 	i := []int{1, 3, 2}
 	nextPermutation(i)
 	fmt.Println(i)
+}
+
+func Test32(t *testing.T) {
+	fmt.Println(longestValidParentheses("()())("))
 }
 
 func Test72(t *testing.T) {
