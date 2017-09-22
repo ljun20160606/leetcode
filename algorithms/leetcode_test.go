@@ -159,6 +159,10 @@ func Test33(t *testing.T) {
 	fmt.Println(search([]int{3, 1}, 1))
 }
 
+func Test81(t *testing.T) {
+	fmt.Println(search2([]int{3, 1}, 1))
+}
+
 func Test72(t *testing.T) {
 	fmt.Println(minDistance("abce", "cde"))
 }

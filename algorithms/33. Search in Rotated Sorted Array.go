@@ -16,6 +16,11 @@ package algorithms
 //     4 < 7 > 2
 // end < start < mid
 
+//     0 1
+//      |
+// 旋转 1 0
+// start = mid
+
 //     0 1 2 4 5 6 7
 //              |   右侧旋转
 //     6 7 0 1 2 4 5
