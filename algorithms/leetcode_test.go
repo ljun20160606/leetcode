@@ -155,6 +155,10 @@ func Test32(t *testing.T) {
 	fmt.Println(longestValidParentheses("()())("))
 }
 
+func Test33(t *testing.T) {
+	fmt.Println(search([]int{3, 1}, 1))
+}
+
 func Test72(t *testing.T) {
 	fmt.Println(minDistance("abce", "cde"))
 }

@@ -35,5 +35,6 @@ golang
 * [30. Substring with Concatenation of All Words](algorithms/30.%20Substring%20with%20Concatenation%20of%20All%20Words)
 * [31. Next Permutation](algorithms/31.%20Next%20Permutation.go)
 * [32. Longest Valid Parentheses](algorithms/32.%20Longest%20Valid%20Parentheses.go)
+* [33. Search in Rotated Sorted Array](algorithms/33.%20Search%20in%20Rotated%20Sorted%20Array.go)
 * [72. Edit Distance](algorithms/72.%20Edit%20Distance.go)
 * [206. Reverse Linked List](algorithms/206.%20Reverse%20Linked%20List.go)
