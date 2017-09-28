@@ -37,6 +37,7 @@ golang
 * [32. Longest Valid Parentheses](algorithms/32.%20Longest%20Valid%20Parentheses.go)
 * [33. Search in Rotated Sorted Array](algorithms/33.%20Search%20in%20Rotated%20Sorted%20Array.go)
 * [34. Search for a Range](algorithms/34.%20Search%20for%20a%20Range.go)
+* [35. Search Insert Position](algorithms/35.%20Search%20Insert%20Position.go)
 * [72. Edit Distance](algorithms/72.%20Edit%20Distance.go)
 * [81. Search in Rotated Sorted Array II](algorithms/81.%20Search%20in%20Rotated%20Sorted%20Array%20II.go)
 * [206. Reverse Linked List](algorithms/206.%20Reverse%20Linked%20List.go)

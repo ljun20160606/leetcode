@@ -159,8 +159,15 @@ func Test33(t *testing.T) {
 	fmt.Println(search([]int{3, 1}, 1))
 }
 
-func Test34(t *testing.T)  {
+func Test34(t *testing.T) {
 	fmt.Println(searchRange([]int{5, 7, 7, 8, 8, 10}, 8))
+}
+
+func Test35(t *testing.T) {
+	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 5))
+	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 2))
+	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 7))
+	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 0))
 }
 
 func Test81(t *testing.T) {

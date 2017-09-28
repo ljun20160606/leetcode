@@ -16,6 +16,7 @@ func searchRange(nums []int, target int) []int {
 		return result
 	}
 
+	// 最左target
 	start, high := 0, len(nums)-1
 	for start < high {
 		mid := (start + high) / 2
@@ -32,6 +33,7 @@ func searchRange(nums []int, target int) []int {
 
 	result[0] = start
 
+	// 最右target
 	high = len(nums) - 1
 	for start < high {
 		mid := (start + high + 1) / 2
