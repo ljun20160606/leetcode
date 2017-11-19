@@ -170,6 +170,10 @@ func Test35(t *testing.T) {
 	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 0))
 }
 
+func Test62(t *testing.T) {
+	fmt.Println(uniquePaths(1, 2))
+}
+
 func Test81(t *testing.T) {
 	fmt.Println(search2([]int{3, 1}, 1))
 }
