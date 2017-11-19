@@ -18,9 +18,8 @@ func uniquePaths(m int, n int) int {
 	for x := range matrix[0] {
 		matrix[0][x] = 1
 	}
-	lenX, lenY := m, n
-	for y := 1; y < lenY; y++ {
-		for x := 1; x < lenX; x++ {
+	for y := 1; y < n; y++ {
+		for x := 1; x < m; x++ {
 			matrix[y][x] = matrix[y][x-1] + matrix[y-1][x]
 		}
 	}

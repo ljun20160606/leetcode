@@ -174,6 +174,14 @@ func Test62(t *testing.T) {
 	fmt.Println(uniquePaths(1, 2))
 }
 
+func Test63(t *testing.T) {
+	fmt.Println(uniquePathsWithObstacles([][]int{
+		{0, 0, 0},
+		{0, 1, 0},
+		{0, 0, 0},
+	}))
+}
+
 func Test81(t *testing.T) {
 	fmt.Println(search2([]int{3, 1}, 1))
 }
