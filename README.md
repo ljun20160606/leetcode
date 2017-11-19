@@ -40,6 +40,7 @@ golang
 * [35. Search Insert Position](algorithms/35.%20Search%20Insert%20Position.go)
 * [62. Unique Paths](algorithms/62.%20Unique%20Paths.go)
 * [63. Unique Paths II](algorithms/63.%20Unique%20Paths%20II.go)
+* [64. Minimum Path Sum](algorithms/64.%20Minimum%20Path%20Sum.go)
 * [72. Edit Distance](algorithms/72.%20Edit%20Distance.go)
 * [81. Search in Rotated Sorted Array II](algorithms/81.%20Search%20in%20Rotated%20Sorted%20Array%20II.go)
 * [206. Reverse Linked List](algorithms/206.%20Reverse%20Linked%20List.go)
