@@ -1,5 +1,7 @@
 package algorithms
 
+import "github.com/LFZJun/leetcode/algorithms/util"
+
 //Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.
 //
 //Note: You can only move either down or right at any point in time.
@@ -24,7 +26,7 @@ func minPathSum(grid [][]int) int {
 	}
 	for y := 1; y < lenY; y++ {
 		for x := 1; x < lenX; x++ {
-			matrix[y][x] = minOfTwo(matrix[y][x-1], matrix[y-1][x]) + grid[y][x]
+			matrix[y][x] = util.MinOfTwo(matrix[y][x-1], matrix[y-1][x]) + grid[y][x]
 		}
 	}
 	return matrix[lenY-1][lenX-1]

@@ -99,12 +99,6 @@ func Test18(t *testing.T) {
 	fmt.Println(fourSum([]int{0, 0, 0, 0}, 0))
 }
 
-func TestKsum(t *testing.T) {
-	var result [][]int
-	origin.KSum([]int{-3, -1, 0, 2, 4, 5}, 1, 2, []int{}, &result)
-	fmt.Println(result)
-}
-
 func Test19(t *testing.T) {
 	fmt.Println(removeNthFromEnd(&ListNode{1, &ListNode{2, nil}}, 2))
 }

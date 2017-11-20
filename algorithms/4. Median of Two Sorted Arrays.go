@@ -1,5 +1,7 @@
 package algorithms
 
+import "github.com/LFZJun/leetcode/algorithms/util"
+
 //There are two sorted arrays nums1 and nums2 of size m and n respectively.
 //
 //Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
@@ -23,20 +25,6 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	return (findKth(nums1, nums2, l/2-1) + findKth(nums1, nums2, l/2)) / 2
 }
 
-func minOfTwo(a, b int) int {
-	if a <= b {
-		return a
-	}
-	return b
-}
-
-func maxOfTwo(a, b int) int {
-	if a >= b {
-		return a
-	}
-	return b
-}
-
 func findKth(a, b []int, k int) float64 {
 	if len(a) > len(b) {
 		a, b = b, a
@@ -46,12 +34,12 @@ func findKth(a, b []int, k int) float64 {
 	}
 	switch k {
 	case 0:
-		return float64(minOfTwo(a[0], b[0]))
+		return float64(util.MinOfTwo(a[0], b[0]))
 	case len(a) + len(b) - 1:
-		return float64(maxOfTwo(a[len(a)-1], b[len(b)-1]))
+		return float64(util.MaxOfTwo(a[len(a)-1], b[len(b)-1]))
 	}
-	pa := minOfTwo(len(a)-1, k/2)  // k/2
-	pb := minOfTwo(len(b)-1, k-pa) // k - k/2
+	pa := util.MinOfTwo(len(a)-1, k/2)  // k/2
+	pb := util.MinOfTwo(len(b)-1, k-pa) // k - k/2
 	if a[pa] < b[pb] {
 		return findKth(a[pa:], b[:pb], pb)
 	}
