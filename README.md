@@ -38,6 +38,7 @@ golang
 * [33. Search in Rotated Sorted Array](algorithms/33.%20Search%20in%20Rotated%20Sorted%20Array.go)
 * [34. Search for a Range](algorithms/34.%20Search%20for%20a%20Range.go)
 * [35. Search Insert Position](algorithms/35.%20Search%20Insert%20Position.go)
+* [53. Maximum Subarray](algorithms/53.%20Maximum%20Subarray.go)
 * [62. Unique Paths](algorithms/62.%20Unique%20Paths.go)
 * [63. Unique Paths II](algorithms/63.%20Unique%20Paths%20II.go)
 * [64. Minimum Path Sum](algorithms/64.%20Minimum%20Path%20Sum.go)

@@ -2,7 +2,6 @@ package algorithms
 
 import (
 	"fmt"
-	"github.com/LFZJun/leetcode/algorithms/origin"
 	"github.com/davecgh/go-spew/spew"
 	"testing"
 )
@@ -162,6 +161,10 @@ func Test35(t *testing.T) {
 	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 2))
 	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 7))
 	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 0))
+}
+
+func Test53(t *testing.T) {
+	fmt.Println(maxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
 }
 
 func Test62(t *testing.T) {
