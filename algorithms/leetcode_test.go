@@ -187,6 +187,10 @@ func Test64(t *testing.T) {
 	}))
 }
 
+func Test70(t *testing.T) {
+	fmt.Println(climbStairs(10))
+}
+
 func Test72(t *testing.T) {
 	fmt.Println(minDistance("abce", "cde"))
 }

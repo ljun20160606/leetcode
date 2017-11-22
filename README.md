@@ -45,6 +45,7 @@ golang
 | 62   | [Unique Paths](algorithms/62.%20Unique%20Paths.go)                                                                          | Array, Dynamic Programming                     |
 | 63   | [Unique Paths II](algorithms/63.%20Unique%20Paths%20II.go)                                                                  | Array, Dynamic Programming                     |
 | 64   | [Minimum Path Sum](algorithms/64.%20Minimum%20Path%20Sum.go)                                                                | Array, Dynamic Programming                     |
+| 70   | [Climbing Stairs](algorithms/70.%20Climbing%20Stairs.go)                                                                    | Dynamic Programming                            |
 | 72   | [Edit Distance](algorithms/72.%20Edit%20Distance.go)                                                                        | String, Dynamic Programming                    |
 | 81   | [Search in Rotated Sorted Array II](algorithms/81.%20Search%20in%20Rotated%20Sorted%20Array%20II.go)                        | Array, Binary Search                           |
 | 206  | [Reverse Linked List](algorithms/206.%20Reverse%20Linked%20List.go)                                                         | Linked List                                    |
