@@ -15,7 +15,7 @@ golang
 | 7    | [Reverse Integer](algorithms/7.%20Reverse%20Integer.go)                                                                     | Math                                           |
 | 8    | [String to Integer (atoi)](algorithms/8.%20String%20to%20Integer%20(atoi).go)                                               | Math, String                                   |
 | 9    | [Palindrome Number](algorithms/9.%20Palindrome%20Number.go)                                                                 | Math                                           |
-| 10   | [Regular Expression Matching](algorithms/10.%20Regular%20Expression%20Matching.go)                                          | String, Dynamic Programming, Backtracking      |
+| 10   | [Regular Expression Matching][010]                                                                                           | String, Dynamic Programming, Backtracking      |
 | 11   | [Container With Most Water](algorithms/11.%20Container%20With%20Most%20Water.go)                                            | Array, Two Pointers                            |
 | 12   | [Integer to Roman](algorithms/12.%20Integer%20to%20Roman.go)                                                                | Math, String                                   |
 | 13   | [Roman to Integer](algorithms/13.%20Roman%20to%20Integer.go)                                                                | Math, String                                   |
@@ -56,3 +56,5 @@ golang
 | :--- | :------------------------------------------------------ | :------------------ |
 |      | [Ksum](algorithms/origin/ksum.go)                       | Array, Two Pointers |
 |      | [0/1 knapsack](algorithms/origin/knapsack%20problem.go) | Dynamic Programming |
+
+[010]: note/010/README.md

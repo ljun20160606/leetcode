@@ -1,7 +1,5 @@
 package algorithms
 
-import "fmt"
-
 //Implement regular expression matching with support for '.' and '*'.
 //
 //'.' Matches any single character.
@@ -23,7 +21,6 @@ import "fmt"
 
 // v0版本的精简版 去掉了parser那一套 清爽了很多 本质上就是 状态机+回溯
 func isMatchV1(s string, p string) bool {
-	fmt.Println(s, p)
 	switch {
 	case len(p) == 0:
 		return len(s) == 0
@@ -46,30 +43,30 @@ func isMatchV1(s string, p string) bool {
 
 // dp
 func isMatch(s string, p string) bool {
-	m, n := len(s), len(p)
-	dp := make([][]bool, m+1)
-	for i := range dp {
-		dp[i] = make([]bool, n+1)
+	lenY, lenX := len(s), len(p)
+	dp := make([][]bool, lenY+1)
+	for y := range dp {
+		dp[y] = make([]bool, lenX+1)
 	}
 	dp[0][0] = true
-	for i := 1; i <= n; i++ {
-		if p[i-1] == '*' {
-			dp[0][i] = dp[0][i-2]
+	for x := 1; x <= lenX; x++ {
+		if p[x-1] == '*' {
+			dp[0][x] = dp[0][x-2]
 		}
 	}
-	for i, mv := range s {
-		for j, pv := range p {
+	for y, mv := range s {
+		for x, pv := range p {
 			switch pv {
 			case '*':
-				if p[j-1] == s[i] || p[j-1] == '.' {
-					dp[i+1][j+1] = dp[i][j+1] || dp[i+1][j] || dp[i+1][j-1]
+				if p[x-1] == s[y] || p[x-1] == '.' {
+					dp[y+1][x+1] = dp[y][x+1] || dp[y+1][x] || dp[y+1][x-1]
 				} else {
-					dp[i+1][j+1] = dp[i+1][j-1]
+					dp[y+1][x+1] = dp[y+1][x-1]
 				}
 			case '.', mv:
-				dp[i+1][j+1] = dp[i][j]
+				dp[y+1][x+1] = dp[y][x]
 			}
 		}
 	}
-	return dp[m][n]
+	return dp[lenY][lenX]
 }

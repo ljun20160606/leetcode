@@ -63,7 +63,7 @@ func Test9(t *testing.T) {
 }
 
 func Test10(t *testing.T) {
-	fmt.Println(isMatch("ab", ".*c"))
+	fmt.Println(isMatch("abc", "a*c"))
 }
 
 func Test11(t *testing.T) {
