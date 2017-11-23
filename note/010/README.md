@@ -36,32 +36,32 @@
 
 ```go
 func isMatch(s string, p string) bool {
-    lenY, lenX := len(s), len(p)
-    dp := make([][]bool, lenY+1)
+    lenY, lenX := len(s)+1, len(p)+1
+    dp := make([][]bool, lenY)
     for y := range dp {
-        dp[y] = make([]bool, lenX+1)
+        dp[y] = make([]bool, lenX)
     }
     dp[0][0] = true
-    for x := 1; x <= lenX; x++ {
+    for x := 1; x < lenX; x++ {
         if p[x-1] == '*' {
             dp[0][x] = dp[0][x-2]
         }
     }
-    for y, mv := range s {
-        for x, pv := range p {
-            switch pv {
+    for y := 1; y < lenY; y++ {
+        for x := 1; x < lenX; x++ {
+            switch p[x-1] {
             case '*':
-                if p[x-1] == s[y] || p[x-1] == '.' {
-                    dp[y+1][x+1] = dp[y][x+1] || dp[y+1][x] || dp[y+1][x-1]
+                if p[x-2] == s[y-1] || p[x-2] == '.' {
+                    dp[y][x] = dp[y-1][x] || dp[y][x-1] || dp[y][x-2]
                 } else {
-                    dp[y+1][x+1] = dp[y+1][x-1]
+                    dp[y][x] = dp[y][x-2]
                 }
-            case '.', mv:
-                dp[y+1][x+1] = dp[y][x]
+            case '.', s[y-1]:
+                dp[y][x] = dp[y-1][x-1]
             }
         }
     }
-    return dp[lenY][lenX]
+    return dp[len(s)][len(p)]
 }
 ```
 

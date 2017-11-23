@@ -163,6 +163,10 @@ func Test35(t *testing.T) {
 	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 0))
 }
 
+func Test44(t *testing.T) {
+	fmt.Println(wildCardIsMatch("aab", "c*a*b"))
+}
+
 func Test53(t *testing.T) {
 	fmt.Println(maxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
 }
