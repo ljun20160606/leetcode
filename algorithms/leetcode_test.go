@@ -202,3 +202,7 @@ func Test72(t *testing.T) {
 func Test81(t *testing.T) {
 	fmt.Println(search2([]int{3, 1}, 1))
 }
+
+func Test84(t *testing.T) {
+	fmt.Println(naiveLargestRectangleArea([]int{2, 1, 2}))
+}
