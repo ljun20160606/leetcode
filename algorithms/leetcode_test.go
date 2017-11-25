@@ -206,3 +206,12 @@ func Test81(t *testing.T) {
 func Test84(t *testing.T) {
 	fmt.Println(naiveLargestRectangleArea([]int{2, 1, 2}))
 }
+
+func Test85(t *testing.T) {
+	fmt.Println(naiveMaximalRectangle([][]byte{
+		{'1', '0', '1', '0', '0'},
+		{'1', '0', '1', '1', '1'},
+		{'1', '1', '1', '1', '1'},
+		{'1', '0', '0', '1', '0'},
+	}))
+}

@@ -9,7 +9,7 @@ import (
 //For example, given the array [-2,1,-3,4,-1,2,1,-5,4],
 //the contiguous subarray [4,-1,2,1] has the largest sum = 6.
 
-// dp[i]为包含nums[i]的最大子array
+// dp[i]为包含nums[i]的最大subarray和
 // dp[i]有两种情况
 // 1. dp[i-1]+nums[i]
 // 2. nums[i]
