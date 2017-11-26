@@ -204,7 +204,7 @@ func Test81(t *testing.T) {
 }
 
 func Test84(t *testing.T) {
-	fmt.Println(naiveLargestRectangleArea([]int{2, 1, 2}))
+	fmt.Println(largestRectangleArea([]int{2, 1, 5, 6, 2, 3}))
 }
 
 func Test85(t *testing.T) {

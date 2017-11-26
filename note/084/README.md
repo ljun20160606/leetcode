@@ -1,19 +1,26 @@
-package algorithms
+# Largest Rectangle in Histogram
 
-import "github.com/LFZJun/leetcode/algorithms/util"
+## 描述
 
-//Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
-//
-//
-//Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].
-//
-//
-//The largest rectangle is shown in the shaded area, which has area = 10 unit.
-//
-//For example,
-//Given heights = [2,1,5,6,2,3],
-//return 10.
+> Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
 
+![histogram](histogram.png)
+
+> Above is a histogram where width of each bar is 1, given height = `[2,1,5,6,2,3]`.
+
+![histogram_area](histogram_area.png)
+
+> The largest rectangle is shown in the shaded area, which has area = 10 unit.
+>
+> For example, Given heights = `[2,1,5,6,2,3]`, return 10.
+
+## 题解
+
+### 1. 朴素做法，左右扫描
+
+> 遍历`heights[i]`, 向左遍历获取最左边界存入`left[i]`, 向右扫描获取最右边界存入`right[i]`, 遍历`heights[i]`, `s=(left[i]+right[i]+1)*heights[i]`, 遍历的同时替换最大面积。
+
+````go
 func naiveLargestRectangleArea(heights []int) int {
 	if len(heights) == 0 {
 		return 0
@@ -39,7 +46,11 @@ func naiveLargestRectangleArea(heights []int) int {
 	}
 	return maxSquare
 }
+````
 
+### 2. 递增栈
+
+````go
 func largestRectangleArea(heights []int) int {
 	if len(heights) == 0 {
 		return 0
@@ -63,3 +74,4 @@ func largestRectangleArea(heights []int) int {
 	}
 	return square
 }
+````

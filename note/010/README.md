@@ -34,7 +34,7 @@
 | b   | false | false | false | false |
 | c   | false | false | false | false |
 
-```go
+````go
 func isMatch(s string, p string) bool {
     lenY, lenX := len(s)+1, len(p)+1
     dp := make([][]bool, lenY)
@@ -63,11 +63,11 @@ func isMatch(s string, p string) bool {
     }
     return dp[len(s)][len(p)]
 }
-```
+````
 
 ### 2. 递归、回溯
 
-```go
+````go
 func isMatchV1(s string, p string) bool {
     switch {
     case len(p) == 0:
@@ -88,4 +88,4 @@ func isMatchV1(s string, p string) bool {
         return (s[0] == p[0] || p[0] == '.') && isMatchV1(s[1:], p[1:])
     }
 }
-```
+````

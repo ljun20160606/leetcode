@@ -49,6 +49,7 @@ golang
 | 70   | [Climbing Stairs](algorithms/70.%20Climbing%20Stairs.go)                                                                    | Dynamic Programming                               |
 | 72   | [Edit Distance](algorithms/72.%20Edit%20Distance.go)                                                                        | String, Dynamic Programming                       |
 | 81   | [Search in Rotated Sorted Array II](algorithms/81.%20Search%20in%20Rotated%20Sorted%20Array%20II.go)                        | Array, Binary Search                              |
+| 84   | [Largest Rectangle in Histogram][084]                                                                                       | Array, Stack                                      |
 | 206  | [Reverse Linked List](algorithms/206.%20Reverse%20Linked%20List.go)                                                         | Linked List                                       |
 
 ## Other
@@ -59,3 +60,4 @@ golang
 |      | [0/1 knapsack](algorithms/origin/knapsack%20problem.go) | Dynamic Programming |
 
 [010]: note/010/README.md
+[084]: note/084/README.md
