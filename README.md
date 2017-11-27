@@ -50,6 +50,7 @@ golang
 | 72   | [Edit Distance](algorithms/72.%20Edit%20Distance.go)                                                                        | String, Dynamic Programming                       |
 | 81   | [Search in Rotated Sorted Array II](algorithms/81.%20Search%20in%20Rotated%20Sorted%20Array%20II.go)                        | Array, Binary Search                              |
 | 84   | [Largest Rectangle in Histogram][084]                                                                                       | Array, Stack                                      |
+| 91   | [Decode Ways](algorithms/91.%20Decode%20Ways.go)                                                                            | String, Dynamic Programming                       |
 | 206  | [Reverse Linked List](algorithms/206.%20Reverse%20Linked%20List.go)                                                         | Linked List                                       |
 
 ## Other

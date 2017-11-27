@@ -215,3 +215,7 @@ func Test85(t *testing.T) {
 		{'1', '0', '0', '1', '0'},
 	}))
 }
+
+func Test91(t *testing.T) {
+	fmt.Println(numDecodings("1345"))
+}
