@@ -219,3 +219,7 @@ func Test85(t *testing.T) {
 func Test91(t *testing.T) {
 	fmt.Println(numDecodings("1345"))
 }
+
+func Test96(t *testing.T) {
+	fmt.Println(numTrees(3))
+}
