@@ -163,6 +163,10 @@ func Test35(t *testing.T) {
 	fmt.Println(searchInsert([]int{1, 3, 5, 6}, 0))
 }
 
+func Test38(t *testing.T) {
+	fmt.Println(countAndSay(4))
+}
+
 func Test44(t *testing.T) {
 	fmt.Println(wildCardIsMatch("aab", "c*a*b"))
 }

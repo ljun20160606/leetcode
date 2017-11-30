@@ -41,6 +41,7 @@ golang
 | 33   | [Search in Rotated Sorted Array](algorithms/33.%20Search%20in%20Rotated%20Sorted%20Array.go)                                | Array, Binary Search                              |
 | 34   | [Search for a Range](algorithms/34.%20Search%20for%20a%20Range.go)                                                          | Array, Binary Search                              |
 | 35   | [Search Insert Position](algorithms/35.%20Search%20Insert%20Position.go)                                                    | Array, Binary Search                              |
+| 38   | [Count and Say](algorithms/38.%20Count%20and%20Say.go)                                                                      | String                                            |
 | 44   | [Wildcard Matching](algorithms/44.%20Wildcard%20Matching.go)                                                                | String, Dynamic Programming, Backtracking, Greedy |
 | 53   | [Maximum Subarray](algorithms/53.%20Maximum%20Subarray.go)                                                                  | Array, Divide and Conquer, Dynamic Programming    |
 | 62   | [Unique Paths](algorithms/62.%20Unique%20Paths.go)                                                                          | Array, Dynamic Programming                        |
