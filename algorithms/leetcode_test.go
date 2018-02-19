@@ -169,7 +169,14 @@ func Test23(t *testing.T) {
 }
 
 func Test26(t *testing.T) {
-	fmt.Println(removeDuplicates([]int{1, 1, 2}))
+	nums := []int{1, 1, 2}
+	newLength := removeDuplicates(nums)
+	if newLength != 2 {
+		t.Fail()
+	}
+	if !reflect.DeepEqual(nums[:newLength], []int{1, 2}) {
+		t.Fail()
+	}
 }
 
 func Test27(t *testing.T) {
