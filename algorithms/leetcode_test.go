@@ -233,7 +233,7 @@ func Test53(t *testing.T) {
 }
 
 func Test56(t *testing.T) {
-	fmt.Println(merge([]Interval{{1, 3}, {2, 6}, {8, 10}, {15, 18}}))
+	fmt.Println(merge([]interval{{1, 3}, {2, 6}, {8, 10}, {15, 18}}))
 }
 
 func Test62(t *testing.T) {
@@ -293,9 +293,7 @@ func Test91(t *testing.T) {
 }
 
 func Test94(t *testing.T) {
-	r := inorderTraversal(&TreeNode{1,
-		nil, &TreeNode{Val: 2,
-			Left: &TreeNode{Val: 3}, Right: nil}})
+	r := inorderTraversal(array2BinaryTree([]interface{}{1, nil, 2, nil, nil, 3}))
 	if !reflect.DeepEqual(r, []int{1, 3, 2}) {
 		t.Fatal(r)
 	}
@@ -310,8 +308,8 @@ func Test96(t *testing.T) {
 
 func Test100(t *testing.T) {
 	isSameOne := isSameTree(
-		&TreeNode{1, &TreeNode{Val: 2}, &TreeNode{Val: 3}},
-		&TreeNode{1, &TreeNode{Val: 2}, &TreeNode{Val: 3}},
+		array2BinaryTree([]interface{}{1, 2, 3}),
+		array2BinaryTree([]interface{}{1, 2, 3}),
 	)
 
 	if !isSameOne {
@@ -319,8 +317,8 @@ func Test100(t *testing.T) {
 	}
 
 	isSameTwo := isSameTree(
-		&TreeNode{1, &TreeNode{Val: 2}, nil},
-		&TreeNode{1, nil, &TreeNode{Val: 3}},
+		array2BinaryTree([]interface{}{1, 2, nil}),
+		array2BinaryTree([]interface{}{1, nil, 3}),
 	)
 
 	if isSameTwo {
@@ -328,12 +326,19 @@ func Test100(t *testing.T) {
 	}
 
 	isSameThree := isSameTree(
-		&TreeNode{1, &TreeNode{Val: 2}, &TreeNode{Val: 1}},
-		&TreeNode{1, &TreeNode{Val: 1}, &TreeNode{Val: 2}},
+		array2BinaryTree([]interface{}{1, 1, 2}),
+		array2BinaryTree([]interface{}{1, 2, 1}),
 	)
 
 	if isSameThree {
 		t.Fatal("[1, 1, 2] and [1, 2, 1] are not same")
+	}
+}
+
+func Test101(t *testing.T) {
+	isSymmetric := isSymmetric(array2BinaryTree([]interface{}{1, 2, 2, 3, 4, 4, 3}))
+	if !isSymmetric {
+		t.Fail()
 	}
 }
 
@@ -343,5 +348,34 @@ func Test206(t *testing.T) {
 		&ListNode{2, &ListNode{1, nil}},
 	) {
 		t.Fatal("not equal")
+	}
+}
+
+func TestArray2BinaryTree(t *testing.T) {
+	tree := array2BinaryTree([]interface{}{1, 2, 3})
+	if tree.Val != 1 {
+		t.Fail()
+	}
+	if tree.Left.Val != 2 {
+		t.Fail()
+	}
+	if tree.Right.Val != 3 {
+		t.Fail()
+	}
+}
+
+func TestBreadthFirstBinaryTree(t *testing.T) {
+	foo := []interface{}{1, 2, 2, 3, 4, 4, 3}
+	root := array2BinaryTree(foo)
+	var bar []interface{}
+	breadthFirstBinaryTree(root, func(node *TreeNode) {
+		if node == nil {
+			bar = append(bar, nil)
+		} else {
+			bar = append(bar, node.Val)
+		}
+	})
+	if !reflect.DeepEqual(foo, bar) {
+		t.Fail()
 	}
 }
