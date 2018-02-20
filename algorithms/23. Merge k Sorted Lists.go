@@ -2,18 +2,6 @@ package algorithms
 
 //Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
 
-func mergeKListsV0(lists []*ListNode) *ListNode {
-	if len(lists) == 0 {
-		return nil
-	}
-	end := len(lists) - 1
-	r := lists[end]
-	for i := end; i > 0; i-- {
-		r = mergeTwoLists(r, lists[i-1])
-	}
-	return r
-}
-
 func mergeKLists(lists []*ListNode) *ListNode {
 	if len(lists) == 0 {
 		return nil

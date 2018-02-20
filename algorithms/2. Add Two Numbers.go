@@ -9,9 +9,8 @@ package algorithms
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	t := 0
-	node := &ListNode{}
-	root := node
-	var end *ListNode
+	head := new(*ListNode)
+	current := head
 	for l1 != nil || l2 != nil || t != 0 {
 		if l1 != nil {
 			t += l1.Val
@@ -21,13 +20,13 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 			t += l2.Val
 			l2 = l2.Next
 		}
+		if *current == nil {
+			*current = new(ListNode)
+		}
 		val := t % 10
 		t /= 10
-		node.Val = val
-		node.Next = &ListNode{}
-		end = node
-		node = node.Next
+		(**current).Val = val
+		current = &((*current).Next)
 	}
-	end.Next = nil
-	return root
+	return *head
 }

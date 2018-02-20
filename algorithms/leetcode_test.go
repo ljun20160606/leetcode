@@ -2,7 +2,6 @@ package algorithms
 
 import (
 	"fmt"
-	"github.com/davecgh/go-spew/spew"
 	"reflect"
 	"testing"
 )
@@ -33,12 +32,12 @@ func Test1V1(t *testing.T) {
 
 func Test2(t *testing.T) {
 	result := addTwoNumbers(
-		&ListNode{5, nil},
-		&ListNode{5, nil},
+		array2ListNode([]int{2, 4, 3}),
+		array2ListNode([]int{5, 6, 4}),
 	)
-	for result != nil {
-		fmt.Println(result.Val)
-		result = result.Next
+	expected := array2ListNode([]int{7, 0, 8})
+	if !reflect.DeepEqual(result, expected) {
+		t.Fail()
 	}
 }
 
@@ -149,7 +148,11 @@ func Test18(t *testing.T) {
 }
 
 func Test19(t *testing.T) {
-	fmt.Println(removeNthFromEnd(&ListNode{1, &ListNode{2, nil}}, 2))
+	result := removeNthFromEnd(array2ListNode([]int{1, 2, 3, 4, 5}), 2)
+	expected := array2ListNode([]int{1, 2, 3, 5})
+	if !reflect.DeepEqual(result, expected) {
+		t.Fail()
+	}
 }
 
 func Test20(t *testing.T) {
@@ -157,7 +160,11 @@ func Test20(t *testing.T) {
 }
 
 func Test21(t *testing.T) {
-	spew.Println(mergeTwoLists(&ListNode{2, nil}, &ListNode{1, nil}))
+	result := mergeTwoLists(array2ListNode([]int{2, 4}), array2ListNode([]int{1, 3}))
+	expected := array2ListNode([]int{1, 2, 3, 4})
+	if !reflect.DeepEqual(result, expected) {
+		t.Fail()
+	}
 }
 
 func Test22(t *testing.T) {
@@ -165,7 +172,28 @@ func Test22(t *testing.T) {
 }
 
 func Test23(t *testing.T) {
-	spew.Println(mergeKLists([]*ListNode{{2, nil}, {1, nil}}))
+	nodes := []*ListNode{{1, nil}, {2, nil}}
+	resultOne := mergeKLists(nodes)
+	expected := array2ListNode([]int{1, 2})
+	if !reflect.DeepEqual(resultOne, expected) {
+		t.Fatal("one")
+	}
+}
+
+func Test24(t *testing.T) {
+	result := swapPairs(array2ListNode([]int{1, 2, 3, 4}))
+	expected := array2ListNode([]int{2, 1, 4, 3})
+	if !reflect.DeepEqual(result, expected) {
+		t.Fail()
+	}
+}
+
+func Test25(t *testing.T) {
+	result := reverseKGroup(array2ListNode([]int{1, 2, 3, 4, 5}), 2)
+	expected := array2ListNode([]int{2, 1, 4, 3, 5})
+	if !reflect.DeepEqual(result, expected) {
+		t.Fail()
+	}
 }
 
 func Test26(t *testing.T) {
@@ -336,16 +364,24 @@ func Test100(t *testing.T) {
 }
 
 func Test101(t *testing.T) {
-	isSymmetric := isSymmetric(array2BinaryTree([]interface{}{1, 2, 2, 3, 4, 4, 3}))
-	if !isSymmetric {
+	isSymmetricOne := isSymmetric(array2BinaryTree([]interface{}{1, 2, 2, 3, 4, 4, 3}))
+	if !isSymmetricOne {
+		t.Fail()
+	}
+	isSymmetricTwo := isSymmetric(nil)
+	if !isSymmetricTwo {
+		t.Fail()
+	}
+	isSymmetricThree := isSymmetric(array2BinaryTree([]interface{}{1, 2, 3}))
+	if isSymmetricThree {
 		t.Fail()
 	}
 }
 
 func Test206(t *testing.T) {
 	if !reflect.DeepEqual(
-		reverseList(&ListNode{1, &ListNode{2, nil}}),
-		&ListNode{2, &ListNode{1, nil}},
+		reverseList(array2ListNode([]int{1, 2})),
+		array2ListNode([]int{2, 1}),
 	) {
 		t.Fatal("not equal")
 	}
@@ -376,6 +412,14 @@ func TestBreadthFirstBinaryTree(t *testing.T) {
 		}
 	})
 	if !reflect.DeepEqual(foo, bar) {
+		t.Fail()
+	}
+}
+
+func TestArray2ListNode(t *testing.T) {
+	expected := &ListNode{1, &ListNode{2, &ListNode{3, &ListNode{4, &ListNode{Val: 5}}}}}
+	result := array2ListNode([]int{1, 2, 3, 4, 5})
+	if !reflect.DeepEqual(expected, result) {
 		t.Fail()
 	}
 }
