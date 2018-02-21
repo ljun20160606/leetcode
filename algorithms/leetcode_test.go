@@ -2,6 +2,7 @@ package algorithms
 
 import (
 	"fmt"
+	"math"
 	"reflect"
 	"testing"
 )
@@ -109,7 +110,10 @@ func Test10V1(t *testing.T) {
 }
 
 func Test11(t *testing.T) {
-	fmt.Println(maxArea([]int{1, 1}))
+	area := maxArea([]int{4, 9, 8})
+	if area != 8 {
+		t.Fail()
+	}
 }
 
 func Test12(t *testing.T) {
@@ -156,7 +160,15 @@ func Test19(t *testing.T) {
 }
 
 func Test20(t *testing.T) {
-	fmt.Println(isValid("(())"))
+	parenthesis := "([{}])"
+	valid := isValid(parenthesis)
+	if !valid {
+		t.Fatal("must be valid")
+	}
+	validV0 := isValidV0(parenthesis)
+	if !validV0 {
+		t.Fatal("must be valid")
+	}
 }
 
 func Test21(t *testing.T) {
@@ -216,7 +228,12 @@ func Test28(t *testing.T) {
 }
 
 func Test29(t *testing.T) {
-	fmt.Println(divide(6, 0))
+	if divide(6, 0) != math.MaxInt32 {
+		t.Fail()
+	}
+	if divide(6, 2) != 3 {
+		t.Fail()
+	}
 }
 
 func Test30(t *testing.T) {
@@ -378,6 +395,17 @@ func Test101(t *testing.T) {
 	}
 }
 
+func Test107(t *testing.T) {
+	result := levelOrderBottom(array2BinaryTree([]interface{}{3, 9, 20, nil, nil, 15, 7}))
+	expected := [][]int{{15, 7}, {9, 20}, {3}}
+	if !reflect.DeepEqual(result, expected) {
+		t.Fatalf("need %v but get %v", expected, result)
+	}
+	if levelOrderBottom(nil) != nil {
+		t.Fatal("must be nil")
+	}
+}
+
 func Test206(t *testing.T) {
 	if !reflect.DeepEqual(
 		reverseList(array2ListNode([]int{1, 2})),
@@ -405,11 +433,7 @@ func TestBreadthFirstBinaryTree(t *testing.T) {
 	root := array2BinaryTree(foo)
 	var bar []interface{}
 	breadthFirstBinaryTree(root, func(node *TreeNode) {
-		if node == nil {
-			bar = append(bar, nil)
-		} else {
-			bar = append(bar, node.Val)
-		}
+		bar = append(bar, node.Val)
 	})
 	if !reflect.DeepEqual(foo, bar) {
 		t.Fail()

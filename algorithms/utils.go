@@ -11,6 +11,12 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+func array2BinaryTree(array []interface{}) *TreeNode {
+	root := new(*TreeNode)
+	insertArrayToTreeNode(root, array, 0)
+	return *root
+}
+
 func insertArrayToTreeNode(n **TreeNode, array []interface{}, index int) {
 	if index >= len(array) || array[index] == nil {
 		return
@@ -19,12 +25,6 @@ func insertArrayToTreeNode(n **TreeNode, array []interface{}, index int) {
 	(*n).Val = array[index].(int)
 	insertArrayToTreeNode(&((*n).Left), array, 2*index+1)
 	insertArrayToTreeNode(&((*n).Right), array, 2*index+2)
-}
-
-func array2BinaryTree(array []interface{}) *TreeNode {
-	root := new(*TreeNode)
-	insertArrayToTreeNode(root, array, 0)
-	return *root
 }
 
 func breadthFirstBinaryTree(root *TreeNode, f func(node *TreeNode)) {
