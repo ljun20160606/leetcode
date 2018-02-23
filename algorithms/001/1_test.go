@@ -1,30 +1,50 @@
 package algorithms
 
 import (
-	"reflect"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
-func Test1(t *testing.T) {
-	if !reflect.DeepEqual(twoSum([]int{1, 3, 2}, 3), []int{0, 2}) {
-		t.Fatal("result must be 0, 2")
-	}
-	if len(twoSum([]int{}, 1)) != 0 {
-		t.Fatal("result must be []")
-	}
-	if len(twoSum([]int{1, 3, 2}, 6)) != 0 {
-		t.Fatal("result must be []")
-	}
+type para struct {
+	one []int
+	two int
 }
 
-func Test1V1(t *testing.T) {
-	if !reflect.DeepEqual(twoSumV0([]int{1, 2, 3, 5, 6}, 5), []int{1, 2}) {
-		t.Fatal("result must be 1, 2")
+type ans struct {
+	one []int
+}
+
+type question struct {
+	p para
+	a ans
+}
+
+func Test1(t *testing.T) {
+	ast := assert.New(t)
+
+	qs := []question{
+		{
+			p: para{
+				one: []int{3, 2, 4},
+				two: 6,
+			},
+			a: ans{
+				one: []int{1, 2},
+			},
+		},
+		{
+			p: para{
+				one: []int{3, 2, 4},
+				two: 8,
+			},
+			a: ans{
+				one: nil,
+			},
+		},
 	}
-	if len(twoSumV0([]int{}, 1)) != 0 {
-		t.Fatal("result must be []")
-	}
-	if len(twoSumV0([]int{1, 3, 2}, 6)) != 0 {
-		t.Fatal("result must be []")
+
+	for _, q := range qs {
+		a, p := q.a, q.p
+		ast.Equal(a.one, twoSum(p.one, p.two), "输入:%v", p)
 	}
 }

@@ -20,3 +20,4 @@
 *.iml
 .DS_Store
 .vscode
+coverage.txt

@@ -8,10 +8,10 @@ func mergeKLists(lists []*algorithms.ListNode) *algorithms.ListNode {
 	if len(lists) == 0 {
 		return nil
 	}
-	return mergeKListsHelper(lists)
+	return helper(lists)
 }
 
-func mergeKListsHelper(lists []*algorithms.ListNode) *algorithms.ListNode {
+func helper(lists []*algorithms.ListNode) *algorithms.ListNode {
 	length := len(lists)
 	half := length / 2
 

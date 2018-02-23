@@ -1,5 +1,7 @@
 package algorithms
 
+import "unsafe"
+
 //Given two binary strings, return their sum (also a binary string).
 //
 //For example,
@@ -39,7 +41,7 @@ func addBinary(a string, b string) string {
 		f(a[endA] - 48 + carry)
 	}
 	if carry == 1 {
-		return "1" + string(r)
+		return "1" + *((*string)(unsafe.Pointer(&r)))
 	}
-	return string(r)
+	return *((*string)(unsafe.Pointer(&r)))
 }

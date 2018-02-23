@@ -28,7 +28,7 @@ package algorithms
 //     6 > 1 < 3
 // mid <= end < start
 
-func search2(nums []int, target int) bool {
+func search(nums []int, target int) bool {
 	start, end := 0, len(nums)-1
 	for {
 		if start > end {

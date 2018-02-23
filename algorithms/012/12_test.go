@@ -1,10 +1,11 @@
 package algorithms
 
 import (
-	"fmt"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func Test12(t *testing.T) {
-	fmt.Println(intToRoman(112))
+	roman := intToRoman(112)
+	assert.Equal(t, "CXII", roman)
 }

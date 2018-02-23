@@ -8,11 +8,11 @@ var table = []string{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "
 
 func letterCombinations(digits string) []string {
 	var result []string
-	n(&result, digits, "", 0)
+	helper(&result, digits, "", 0)
 	return result
 }
 
-func n(result *[]string, digits, prefix string, index int) {
+func helper(result *[]string, digits, prefix string, index int) {
 	if index >= len(digits) {
 		if len(prefix) > 0 {
 			*result = append(*result, prefix)
@@ -21,10 +21,10 @@ func n(result *[]string, digits, prefix string, index int) {
 	}
 	digit := digits[index] - '0'
 	if digit < 2 {
-		n(result, digits, prefix, index+1)
+		helper(result, digits, prefix, index+1)
 	} else {
 		for _, v := range table[digit] {
-			n(result, digits, prefix+string(v), index+1)
+			helper(result, digits, prefix+string(v), index+1)
 		}
 	}
 }

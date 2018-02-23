@@ -33,8 +33,6 @@ func findKth(a, b []int, k int) float64 {
 		return float64(b[k])
 	}
 	switch k {
-	case 0:
-		return float64(algorithms.MinOfTwo(a[0], b[0]))
 	case len(a) + len(b) - 1:
 		return float64(algorithms.MaxOfTwo(a[len(a)-1], b[len(b)-1]))
 	}

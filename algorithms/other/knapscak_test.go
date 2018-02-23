@@ -1,18 +1,12 @@
 package other
 
 import (
-	"fmt"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
-func TestKsum(t *testing.T) {
-	var result [][]int
-	KSum([]int{-3, -1, 0, 2, 4, 5}, 1, 2, []int{}, &result)
-	fmt.Println(result)
-}
-
 func TestKnapsack(t *testing.T) {
-	fmt.Println(knapsack([]item{
+	assert.Equal(t, 26, knapsack([]item{
 		{
 			volume: 2,
 			price:  6,

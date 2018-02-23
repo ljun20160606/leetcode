@@ -12,9 +12,6 @@ package algorithms
 // 找到只包含words的连续字字符串
 // 解题思路是计数比较
 func findSubstring(s string, words []string) []int {
-	if len(words) == 0 {
-		return []int{}
-	}
 	wordsMap := make(map[string]int)
 	// 遍历words统计每个word的个数
 	for _, v := range words {
@@ -23,7 +20,7 @@ func findSubstring(s string, words []string) []int {
 	wordLen := len(words[0])
 	l := wordLen * len(words)
 	e := len(s) - l + 1
-	result := []int{}
+	var result []int
 	// 每次截取长度为word*word总数长度的字符串
 	for i := 0; i < e; i++ {
 		tempMap := make(map[string]int)

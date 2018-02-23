@@ -24,11 +24,11 @@ func merge(ins []algorithms.Interval) []algorithms.Interval {
 				end = v.End
 			}
 		} else {
-			r = append(r, algorithms.Interval{start, end})
+			r = append(r, algorithms.Interval{Start: start, End: end})
 			start = v.Start
 			end = v.End
 		}
 	}
-	r = append(r, algorithms.Interval{start, end})
+	r = append(r, algorithms.Interval{Start: start, End: end})
 	return r
 }

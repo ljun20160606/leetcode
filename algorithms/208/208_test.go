@@ -1,14 +1,27 @@
 package algorithms
 
 import (
-	"fmt"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func Test208(t *testing.T) {
-	obj := Constructor()
-	obj.Insert("aaa")
-	param2 := obj.Search("aaa")
-	param3 := obj.StartsWith("a")
-	fmt.Println(param2, param3)
+	ast := assert.New(t)
+
+	trie := Constructor()
+
+	trie.Insert("abc")
+	// ["abc"]
+
+	ast.True(trie.Search("abc"), "Search abc in [abc]")
+	// ["abc"]
+
+	ast.False(trie.Search("abcd"), "Search abcd in [abc]")
+	// ["abc"]
+
+	ast.True(trie.StartsWith("abc"), "Search startWith abc in [abc]")
+	// ["abc"]
+
+	ast.False(trie.StartsWith("bc"), "Search startWith bc in [abc]")
+	// ["abc"]
 }

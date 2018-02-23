@@ -1,75 +1,170 @@
 package algorithms
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
+
+type question struct {
+	p para
+	a ans
+}
+
+type para struct {
+	one string
+	two string
+}
+
+type ans struct {
+	one bool
+}
 
 func Test10(t *testing.T) {
-	if isMatch("aa", "a") {
-		t.Fatal("should be false")
-	}
-	if !isMatch("aa", "aa") {
-		t.Fatal("should be true")
-	}
-	if isMatch("aaa", "aa") {
-		t.Fatal("should be false")
-	}
-	if !isMatch("aa", "a*") {
-		t.Fatal("should be true")
-	}
-	if !isMatch("aa", ".*") {
-		t.Fatal("should be true")
-	}
-	if !isMatch("ab", ".*") {
-		t.Fatal("should be true")
-	}
-	if !isMatch("aab", "c*a*b") {
-		t.Fatal("should be true")
-	}
-}
+	ast := assert.New(t)
 
-func Test10V1(t *testing.T) {
-	if isMatchV1("aa", "a") {
-		t.Fatal("should be false")
-	}
-	if !isMatchV1("aa", "aa") {
-		t.Fatal("should be true")
-	}
-	if isMatchV1("aaa", "aa") {
-		t.Fatal("should be false")
-	}
-	if !isMatchV1("aa", "a*") {
-		t.Fatal("should be true")
-	}
-	if !isMatchV1("aa", ".*") {
-		t.Fatal("should be true")
-	}
-	if !isMatchV1("ab", ".*") {
-		t.Fatal("should be true")
-	}
-	if !isMatchV1("aab", "c*a*b") {
-		t.Fatal("should be true")
-	}
-}
+	qs := []question{
 
-func Test10V0(t *testing.T) {
-	if isMatchV0("aa", "a") {
-		t.Fatal("should be false")
+		{
+			p: para{
+				one: "aa",
+				two: "a",
+			},
+			a: ans{
+				one: false,
+			},
+		},
+		{
+			p: para{
+				one: "aa",
+				two: "aa",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "aaa",
+				two: "aa",
+			},
+			a: ans{
+				one: false,
+			},
+		},
+
+		{
+			p: para{
+				one: "aa",
+				two: "a*",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "aa",
+				two: ".*",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "ab",
+				two: ".*",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "aab",
+				two: "c*a*b",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "aaaaaaaab",
+				two: "c*a*b",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "ab",
+				two: "c*a*b",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "abc",
+				two: ".*",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "ab",
+				two: ".*b.*",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "b",
+				two: ".*b.*",
+			},
+			a: ans{
+				one: true,
+			},
+		},
+		{
+			p: para{
+				one: "b",
+				two: ".*...b",
+			},
+			a: ans{
+				one: false,
+			},
+		},
+		{
+			p: para{
+				one: "b",
+				two: ".*..*b",
+			},
+			a: ans{
+				one: false,
+			},
+		},
+		{
+			p: para{
+				one: "b",
+				two: "a*",
+			},
+			a: ans{
+				one: false,
+			},
+		},
 	}
-	if !isMatchV0("aa", "aa") {
-		t.Fatal("should be true")
-	}
-	if isMatchV0("aaa", "aa") {
-		t.Fatal("should be false")
-	}
-	if !isMatchV0("aa", "a*") {
-		t.Fatal("should be true")
-	}
-	if !isMatchV0("aa", ".*") {
-		t.Fatal("should be true")
-	}
-	if !isMatchV0("ab", ".*") {
-		t.Fatal("should be true")
-	}
-	if !isMatchV0("aab", "c*a*b") {
-		t.Fatal("should be true")
+
+	for _, q := range qs {
+		a, p := q.a, q.p
+		ast.Equal(a.one, isMatch(p.one, p.two), "输入:%v", p)
+		ast.Equal(a.one, isMatchV1(p.one, p.two), "输入:%v", p)
 	}
 }

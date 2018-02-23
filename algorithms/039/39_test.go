@@ -55,6 +55,6 @@ func Test39(t *testing.T) {
 	for _, q := range qs {
 		a, p := q.answer, q.parameter
 
-		ast.Equal(a.one, combinationSum(p.candidates, p.target), "输入:%v", p)
+		ast.Equal(a.one, combinationSum(p.candidates, p.target), "输入:%v", p, "输入:%v", p)
 	}
 }
