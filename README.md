@@ -59,6 +59,7 @@
 | 35   | [Search Insert Position](algorithms/035/35.%20Search%20Insert%20Position.go)                                                    | Array, Binary Search                              |
 | 38   | [Count and Say](algorithms/038/38.%20Count%20and%20Say.go)                                                                      | String                                            |
 | 39   | [Combination Sum](algorithms/039/README.md)                                                                                     | Array, Backtracking                               |
+| 40   | [Combination Sum II](algorithms/040/README.md)                                                                                  | Array, Backtracking                               |
 | 44   | [Wildcard Matching](algorithms/044/44.%20Wildcard%20Matching.go)                                                                | String, Dynamic Programming, Backtracking, Greedy |
 | 53   | [Maximum Subarray](algorithms/053/53.%20Maximum%20Subarray.go)                                                                  | Array, Divide and Conquer, Dynamic Programming    |
 | 56   | [Merge Intervals](algorithms/056/56.%20Merge%20Intervals.go)                                                                    | Array,Sort                                        |
