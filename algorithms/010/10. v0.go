@@ -1,4 +1,5 @@
 package algorithms
+
 //
 //type myRegularMatch struct {
 //	posStr, posPattern, lenStr, lenPattern int

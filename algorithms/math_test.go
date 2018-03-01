@@ -1,8 +1,8 @@
 package algorithms
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestMaxOfTwo(t *testing.T) {
