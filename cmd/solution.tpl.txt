@@ -1,0 +1,12 @@
+# {{.QuestionTitle}}
+
+## 描述
+
+```txt
+{{.Content}}
+```
+
+## 题解
+
+```go
+```
