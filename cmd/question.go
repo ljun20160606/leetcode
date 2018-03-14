@@ -1,104 +1,74 @@
 package main
 
 import (
-	"bytes"
-	"fmt"
-	"github.com/kataras/iris/core/errors"
-	"github.com/ljun20160606/simplehttp"
-	"gopkg.in/go-playground/pool.v3"
+	"encoding/json"
+	"errors"
+	"github.com/PuerkitoBio/goquery"
 	"io"
-	"net/url"
+	"path/filepath"
+	"strings"
+	"text/template"
+	"unsafe"
 )
 
-const (
-	leetcodeCom         = "https://leetcode.com"
-	problemsAllUrl      = leetcodeCom + "/api/problems/all/"
-	descriptionTemplate = leetcodeCom + "/problems/%v/description/"
-	graphql             = leetcodeCom + "/graphql"
-	referer             = leetcodeCom + "/problems/two-sum/description/"
-	getQuestionDetail   = "getQuestionDetail"
-)
+type question struct {
+	*problem
+	FileName string
+	DirPath  string
+}
 
-// 不推荐这么写
-var xCsrftoken string
+func newQuestion(problem *problem, dirPrefix string) *question {
+	fileName := offsetNumber(problem.QuestionID, '0', 3)
+	return &question{
+		problem:  problem,
+		FileName: fileName,
+		DirPath:  filepath.Join(dirPrefix, fileName),
+	}
+}
 
-func genAllFiles(stats []*stat) {
-	p := pool.NewLimited(10)
-	defer p.Close()
-	batch := p.Batch()
-	for e := range stats {
-		stat := stats[e]
-		batch.Queue(func(wu pool.WorkUnit) (r interface{}, err error) {
-			descriptionUrl := fmt.Sprintf(descriptionTemplate, stat.QuestionTitleSlug)
-			logger.Println("Fetch", stat.QuestionID, stat.QuestionTitle, descriptionUrl)
-			err = simplehttp.NewRequest(defaultHttp2Client).Get().SetUrl(descriptionUrl).Send().Error()
-			if err != nil {
-				logger.Fatal(err)
-				return
-			}
+func (q *question) WriteSolution(solutionTplPath string) error {
+	return fs.WriteFileNotExist(filepath.Join(q.DirPath, README), func(writer io.Writer) error {
+		tpl, err := template.ParseFiles(solutionTplPath)
+		if err != nil {
+			return err
+		}
+		document, err := goquery.NewDocumentFromReader(strings.NewReader(q.Content))
+		if err != nil {
+			return err
+		}
+		s := solutionTemplate{
+			QuestionTitle: q.QuestionTitle,
+			Content:       document.Text(),
+		}
+		err = tpl.Execute(writer, s)
+		if err != nil {
+			return err
+		}
+		return nil
+	})
+}
 
-			// 获取csrftoken，查询graphQL需要在header中添加x-csrftoken
-			httpClient := defaultHttp2Client.(*simplehttp.HttpClient)
-			parse, _ := url.Parse(leetcodeCom)
-			jar := httpClient.Jar.Cookies(parse)
-			for _, v := range jar {
-				if v.Name == "csrftoken" {
-					xCsrftoken = v.Value
-					break
+func (q *question) WriteProblem(problemTpl string) error {
+	return fs.WriteFileNotExist(filepath.Join(q.DirPath, q.QuestionFrontendID+". "+q.QuestionTitle+".go"), func(writer io.Writer) error {
+		tpl, err := template.ParseFiles(problemTpl)
+		if err != nil {
+			return err
+		}
+		var cd codeDefinition
+		b := *(*[]byte)(unsafe.Pointer(&q.CodeDefinition))
+		err = json.Unmarshal(b, &cd)
+		if err != nil {
+			return err
+		}
+		for i := range cd {
+			if cd[i].Value == "golang" {
+				err = tpl.Execute(writer, cd[i])
+				if err != nil {
+					return err
 				}
+				return nil
 			}
-			if xCsrftoken == "" {
-				err = errors.New("x-csrftoken not in cookies")
-				logger.Fatal(err)
-				return
-			}
-
-			// 查询question
-			qlResp, err := queryGraphQL(getQuestionDetail, stat.QuestionTitleSlug)
-			if err != nil {
-				logger.Fatal(err)
-				return
-			}
-			q := newQuestionGenerator(&qlResp.Data.Question, "algorithms")
-			// 生成文件夹
-			q.genDir()
-			// 生成题解
-			q.genSolution()
-			// 生成题目
-			q.genQuestion()
-			return
-		})
-	}
-	batch.QueueComplete()
-	batch.WaitAll()
-}
-
-// 查询题目
-func queryGraphQL(operationName, titleSlug string) (*graphQLResp, error) {
-	request := simplehttp.NewRequest(defaultHttp2Client)
-
-	resp := request.Post().SetUrl(graphql).SetBody(graphQLReader(operationName, titleSlug)).
-		Head("referer", referer).
-		Head("x-csrftoken", xCsrftoken).
-		Head("content-type", "application/json").
-		Send()
-	qlResponse := new(graphQLResp)
-	err := resp.JSON(qlResponse)
-	if err != nil {
-		return nil, err
-	}
-	return qlResponse, nil
-}
-
-// 构造graphQL的Body
-func graphQLReader(operationName, titleSlug string) io.Reader {
-	buffer := bytes.Buffer{}
-	buffer.WriteString(`{
-	"operationName": "` + operationName + `",
-	"variables": {
-		"titleSlug": "` + titleSlug + `"
-	},
-	"query": "query getQuestionDetail($titleSlug: String!) {\n  isCurrentUserAuthenticated\n  question(titleSlug: $titleSlug) {\n    questionId\n    questionFrontendId\n    questionTitle\n    questionTitleSlug\n    content\n    difficulty\n    stats\n    contributors\n    similarQuestions\n    discussUrl\n    mysqlSchemas\n    randomQuestionUrl\n    sessionId\n    categoryTitle\n    submitUrl\n    interpretUrl\n    codeDefinition\n    sampleTestCase\n    enableTestMode\n    metaData\n    enableRunCode\n    enableSubmit\n    judgerAvailable\n    infoVerified\n    envInfo\n    urlManager\n    article\n    questionDetailUrl\n    discussCategoryId\n    discussSolutionCategoryId\n    libraryUrl\n    companyTags {\n      name\n      slug\n      translatedName\n    }\n    topicTags {\n      name\n      slug\n      translatedName\n    }\n  }\n  interviewed {\n    interviewedUrl\n    companies {\n      id\n      name\n    }\n    timeOptions {\n      id\n      name\n    }\n    stageOptions {\n      id\n      name\n    }\n  }\n  subscribeUrl\n  isPremium\n  loginUrl\n}\n"
-}`)
-	return &buffer
+		}
+		return errors.New("Not support golang.")
+	})
 }

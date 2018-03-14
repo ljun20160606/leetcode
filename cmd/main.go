@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/ljun20160606/di"
 	"github.com/urfave/cli"
 	"log"
 	"os"
@@ -12,13 +13,13 @@ import (
 //   (2) 抓取描述
 //   (3) 根据Problem建立文件
 func main() {
+	di.TomlLoadFile("cmd/config.toml")
+	di.Start()
 	app := cli.NewApp()
 	app.Name = "leetcode"
-	app.Version = "0.0.1"
+	app.Version = "0.1.0"
 	app.Usage = "leetcode刷题辅助工具"
-	app.Commands = append(app.Commands,
-		cmdLeetcode,
-		cmdQuestion)
+	app.Commands = append(lc.Commands)
 	err := app.Run(os.Args)
 	if err != nil {
 		log.Fatal(err)

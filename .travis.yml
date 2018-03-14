@@ -1,6 +1,10 @@
 language: go
 sudo: false
 
+branches:
+  only:
+  - master
+
 go:
   - 1.10.x
 
