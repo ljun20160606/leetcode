@@ -10,7 +10,7 @@ import (
 // 2. 根据题目生成题目所需文件
 //   (1) 判断文件是否在字典中
 //   (2) 抓取描述
-//	 (3) 根据Problem建立文件
+//   (3) 根据Problem建立文件
 func main() {
 	app := cli.NewApp()
 	app.Name = "leetcode"
