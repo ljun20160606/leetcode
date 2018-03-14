@@ -12,8 +12,7 @@ type question struct {
 }
 
 type para struct {
-	pre []int
-	in  []int
+	pre []interface{}
 }
 
 type ans struct {
@@ -29,11 +28,10 @@ func Test94(t *testing.T) {
 
 		{
 			para{
-				[]int{1, 2, 3},
-				[]int{1, 3, 2},
+				[]interface{}{1, 2, 3},
 			},
 			ans{
-				[]int{1, 3, 2},
+				[]int{2, 1, 3},
 			},
 		},
 	}
@@ -41,6 +39,6 @@ func Test94(t *testing.T) {
 	for _, q := range qs {
 		a, p := q.ans, q.para
 
-		ast.Equal(a.one, inorderTraversal(algorithms.PreIn2Tree(p.pre, p.in)), "输入:%v", p)
+		ast.Equal(a.one, inorderTraversal(algorithms.Array2BinaryTree(p.pre)), "输入:%v", p)
 	}
 }

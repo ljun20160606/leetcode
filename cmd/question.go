@@ -23,8 +23,8 @@ func genAllFiles(stats []*stat) {
 	defer p.Close()
 	batch := p.Batch()
 	for e := range stats {
+		stat := stats[e]
 		batch.Queue(func(wu pool.WorkUnit) (r interface{}, err error) {
-			stat := stats[e]
 			descriptionUrl := fmt.Sprintf(descriptionTemplate, stat.QuestionTitleSlug)
 			logger.Println("Fetch", stat.QuestionID, stat.QuestionTitle, descriptionUrl)
 			err = simplehttp.NewRequest(defaultHttp2Client).Get().SetUrl(descriptionUrl).Send().Error()

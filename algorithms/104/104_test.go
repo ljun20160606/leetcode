@@ -10,29 +10,26 @@ func Test104(t *testing.T) {
 	ast := assert.New(t)
 
 	tcs := []struct {
-		pre, in []int
+		pre     []interface{}
 		ans     int
 	}{
 		{
-			[]int{},
-			[]int{},
+			[]interface{}{},
 			0,
 		},
 
 		{
-			[]int{3, 9, 20, 15, 7},
-			[]int{9, 3, 15, 20, 7},
+			[]interface{}{3, 9, 20, 15, 7},
 			3,
 		},
 
 		{
-			[]int{3, 9, 20, 15, 10, 7},
-			[]int{9, 3, 10, 15, 20, 7},
-			4,
+			[]interface{}{3, 9, 20, 15, 10, 7},
+			3,
 		},
 	}
 
 	for _, tc := range tcs {
-		ast.Equal(tc.ans, maxDepth(algorithms.PreIn2Tree(tc.pre, tc.in)), "输入:%v", tc)
+		ast.Equal(tc.ans, maxDepth(algorithms.Array2BinaryTree(tc.pre)), "输入:%v", tc)
 	}
 }
