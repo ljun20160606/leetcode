@@ -70,6 +70,7 @@
 | 67   | [Add Binary](algorithms/067/README.md)                                     | Math, String                                      |
 | 70   | [Climbing Stairs](algorithms/070/README.md)                                | Dynamic Programming                               |
 | 72   | [Edit Distance](algorithms/072/README.md)                                  | String, Dynamic Programming                       |
+| 78   | [Subsets](algorithms/078/README.md)                                        | Array, Backtracking, Bit Manipulation             |
 | 81   | [Search in Rotated Sorted Array II](algorithms/081/README.md)              | Array, Binary Search                              |
 | 84   | [Largest Rectangle in Histogram](algorithms/084/README.md)                 | Array, Stack                                      |
 | 91   | [Decode Ways](algorithms/091/README.md)                                    | String, Dynamic Programming                       |
