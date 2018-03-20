@@ -61,6 +61,7 @@
 | 39   | [Combination Sum](algorithms/039/README.md)                                | Array, Backtracking                               |
 | 40   | [Combination Sum II](algorithms/040/README.md)                             | Array, Backtracking                               |
 | 44   | [Wildcard Matching](algorithms/044/README.md)                              | String, Dynamic Programming, Backtracking, Greedy |
+| 46   | [Permutations](algorithms/046/README.md)                                   | Backtracking                                      |
 | 48   | [Rotate Image](algorithms/048/README.md)                                   | Array                                             |
 | 53   | [Maximum Subarray](algorithms/053/README.md)                               | Array, Divide and Conquer, Dynamic Programming    |
 | 56   | [Merge Intervals](algorithms/056/README.md)                                | Array,Sort                                        |
