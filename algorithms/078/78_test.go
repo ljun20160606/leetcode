@@ -18,7 +18,7 @@ type ans struct {
 	one [][]int
 }
 
-func Test_78(t *testing.T) {
+func Test78(t *testing.T) {
 	ast := assert.New(t)
 
 	qs := []question{
