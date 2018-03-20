@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	problemsAllUrl      = "https://leetcode.com/api/leetcodeQuestions/all/"
+	problemsAllUrl      = "https://leetcode.com/api/problems/all/"
 	defaultLeetcodeJson = "leetcode.json"
 )
 
