@@ -25,6 +25,11 @@ func Test111(t *testing.T) {
 			[]interface{}{1, nil, 2},
 			2,
 		},
+
+		{
+			[]interface{}{1, 1, 1, 1, 1, nil, nil, 1},
+			2,
+		},
 	}
 	for _, q := range qst {
 		ast.Equal(q.ans, minDepth(algorithms.Array2BinaryTree(q.para)), "输入:%v", q)
