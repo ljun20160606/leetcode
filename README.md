@@ -86,6 +86,7 @@
 | 112  | [Path Sum](algorithms/112/README.md)                                       | Tree, Depth-first Search                          |
 | 136  | [Single Number](algorithms/136/README.md)                                  | Hash Table, Bit Manipulation                      |
 | 206  | [Reverse Linked List](algorithms/206/README.md)                            | Linked List                                       |
+| 257  | [Binary Tree Paths](algorithms/257/README.md)                              | Tree, Depth-first Search                          |
 
 ## Other
 
