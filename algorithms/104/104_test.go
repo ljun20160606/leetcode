@@ -10,8 +10,8 @@ func Test104(t *testing.T) {
 	ast := assert.New(t)
 
 	tcs := []struct {
-		pre     []interface{}
-		ans     int
+		pre []interface{}
+		ans int
 	}{
 		{
 			[]interface{}{},
