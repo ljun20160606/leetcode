@@ -69,6 +69,7 @@
 | 63   | [Unique Paths II](algorithms/063/README.md)                                | Array, Dynamic Programming                        |
 | 64   | [Minimum Path Sum](algorithms/064/README.md)                               | Array, Dynamic Programming                        |
 | 67   | [Add Binary](algorithms/067/README.md)                                     | Math, String                                      |
+| 69   | [Sqrt(x)](algorithms/069/README.md)                                        | Math, Binary Search                               |
 | 70   | [Climbing Stairs](algorithms/070/README.md)                                | Dynamic Programming                               |
 | 72   | [Edit Distance](algorithms/072/README.md)                                  | String, Dynamic Programming                       |
 | 78   | [Subsets](algorithms/078/README.md)                                        | Array, Backtracking, Bit Manipulation             |
