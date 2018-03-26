@@ -64,7 +64,8 @@
 | 46   | [Permutations](algorithms/046/README.md)                                   | Backtracking                                      |
 | 48   | [Rotate Image](algorithms/048/README.md)                                   | Array                                             |
 | 53   | [Maximum Subarray](algorithms/053/README.md)                               | Array, Divide and Conquer, Dynamic Programming    |
-| 56   | [Merge Intervals](algorithms/056/README.md)                                | Array,Sort                                        |
+| 56   | [Merge Intervals](algorithms/056/README.md)                                | Array, Sort                                       |
+| 58   | [Length of Last Word](algorithms/058/README.md)                            | String                                            |
 | 62   | [Unique Paths](algorithms/062/README.md)                                   | Array, Dynamic Programming                        |
 | 63   | [Unique Paths II](algorithms/063/README.md)                                | Array, Dynamic Programming                        |
 | 64   | [Minimum Path Sum](algorithms/064/README.md)                               | Array, Dynamic Programming                        |
