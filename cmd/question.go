@@ -11,7 +11,11 @@ import (
 )
 
 const (
-	descriptionTemplate = "https://leetcode.com/problems/%v/description/"
+	leetcodeCom         = "https://leetcode.com"
+	problemsAllUrl      = leetcodeCom + "/api/problems/all/"
+	descriptionTemplate = leetcodeCom + "/problems/%v/description/"
+	graphql             = leetcodeCom + "/graphql"
+	referer             = leetcodeCom + "/problems/two-sum/description/"
 	getQuestionDetail   = "getQuestionDetail"
 )
 
@@ -35,7 +39,7 @@ func genAllFiles(stats []*stat) {
 
 			// 获取csrftoken，查询graphQL需要在header中添加x-csrftoken
 			httpClient := defaultHttp2Client.(*simplehttp.HttpClient)
-			parse, _ := url.Parse("https://leetcode.com")
+			parse, _ := url.Parse(leetcodeCom)
 			jar := httpClient.Jar.Cookies(parse)
 			for _, v := range jar {
 				if v.Name == "csrftoken" {
@@ -73,8 +77,8 @@ func genAllFiles(stats []*stat) {
 func queryGraphQL(operationName, titleSlug string) (*graphQLResp, error) {
 	request := simplehttp.NewRequest(defaultHttp2Client)
 
-	resp := request.Post().SetUrl("https://leetcode.com/graphql").SetBody(graphQLReader(operationName, titleSlug)).
-		Head("referer", "https://leetcode.com/problems/two-sum/description/").
+	resp := request.Post().SetUrl(graphql).SetBody(graphQLReader(operationName, titleSlug)).
+		Head("referer", referer).
 		Head("x-csrftoken", xCsrftoken).
 		Head("content-type", "application/json").
 		Send()
