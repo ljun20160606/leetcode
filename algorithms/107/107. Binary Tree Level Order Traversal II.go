@@ -8,7 +8,7 @@ func levelOrderBottom(root *TreeNode) [][]int {
 	if root == nil {
 		return nil
 	}
-	q := []*algorithms.TreeNode{root}
+	q := []*TreeNode{root}
 	levelLen := len(q)
 	var r [][]int
 	var level []int

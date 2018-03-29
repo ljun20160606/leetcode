@@ -82,6 +82,7 @@
 | 100  | [Same Tree](algorithms/100/README.md)                                      | Tree, Depth-first Search                          |
 | 101  | [Symmetric Tree](algorithms/101/README.md)                                 | Tree, Depth-first Search, Breadth-first Search    |
 | 102  | [Binary Tree Level Order Traversal](algorithms/102/README.md)              | Tree, Breadth-first Search                        |
+| 103  | [Binary Tree Zigzag Level Order Traversal](algorithms/103/README.md)       | Stack, Tree, Breadth-first Search                 |
 | 104  | [Maximum Depth of Binary Tree](algorithms/104/README.md)                   | Tree, Depth-first Search                          |
 | 107  | [Binary Tree Level Order Traversal II](algorithms/107/README.md)           | Tree, Breadth-first Search                        |
 | 108  | [Convert Sorted Array to Binary Search Tree](algorithms/108/README.md)     | Tree, Depth-first Search                          |
