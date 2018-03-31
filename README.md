@@ -100,3 +100,20 @@
 | :--- | :----------------------------------------------------- | :------------------ |
 |      | [Ksum](algorithms/other/ksum.go)                       | Array, Two Pointers |
 |      | [0/1 knapsack](algorithms/other/knapsack%20problem.go) | Dynamic Programming |
+
+## Cmd
+
+用于自动生成需要写的题目并重新生成README.md
+
+```bash
+# 进入cmd
+$ cd cmd
+# 获取依赖
+$ go get -v -u
+# 编译cli
+$ ./build
+# 返回项目目录
+$ cd ..
+# 拉题目
+$ leetcode-cli pull 1
+```
