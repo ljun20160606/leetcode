@@ -75,6 +75,7 @@
 |72 | [Edit Distance](algorithms/072/README.md) | String, Dynamic Programming |
 |78 | [Subsets](algorithms/078/README.md) | Array, Backtracking, Bit Manipulation |
 |81 | [Search in Rotated Sorted Array II](algorithms/081/README.md) | Array, Binary Search |
+|83 | [Remove Duplicates from Sorted List](algorithms/083/README.md) | Linked List |
 |84 | [Largest Rectangle in Histogram](algorithms/084/README.md) | Array, Stack |
 |88 | [Merge Sorted Array](algorithms/088/README.md) | Array, Two Pointers |
 |91 | [Decode Ways](algorithms/091/README.md) | String, Dynamic Programming |
