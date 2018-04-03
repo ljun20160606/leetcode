@@ -91,6 +91,7 @@
 |110 | [Balanced Binary Tree](algorithms/110/README.md) | Tree, Depth-first Search |
 |111 | [Minimum Depth of Binary Tree](algorithms/111/README.md) | Tree, Depth-first Search, Breadth-first Search |
 |112 | [Path Sum](algorithms/112/README.md) | Tree, Depth-first Search |
+|121 | [Best Time to Buy and Sell Stock](algorithms/121/README.md) | Array, Dynamic Programming |
 |125 | [Valid Palindrome](algorithms/125/README.md) | Two Pointer, String |
 |136 | [Single Number](algorithms/136/README.md) | Hash Table, Bit Manipulation |
 |206 | [Reverse Linked List](algorithms/206/README.md) | Linked List |
