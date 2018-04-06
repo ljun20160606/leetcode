@@ -96,6 +96,7 @@
 |121 | [Best Time to Buy and Sell Stock](algorithms/121/README.md) | Array, Dynamic Programming |
 |125 | [Valid Palindrome](algorithms/125/README.md) | Two Pointer, String |
 |136 | [Single Number](algorithms/136/README.md) | Hash Table, Bit Manipulation |
+|203 | [Remove Linked List Elements](algorithms/203/README.md) | Linked List |
 |206 | [Reverse Linked List](algorithms/206/README.md) | Linked List |
 |257 | [Binary Tree Paths](algorithms/257/README.md) | Tree, Depth-first Search |
 
