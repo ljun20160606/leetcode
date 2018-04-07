@@ -94,6 +94,7 @@
 |118 | [Pascal's Triangle](algorithms/118/README.md) | Array |
 |119 | [Pascal's Triangle II](algorithms/119/README.md) | Array |
 |121 | [Best Time to Buy and Sell Stock](algorithms/121/README.md) | Array, Dynamic Programming |
+|122 | [Best Time to Buy and Sell Stock II](algorithms/122/README.md) | Array, Greedy |
 |125 | [Valid Palindrome](algorithms/125/README.md) | Two Pointer, String |
 |136 | [Single Number](algorithms/136/README.md) | Hash Table, Bit Manipulation |
 |203 | [Remove Linked List Elements](algorithms/203/README.md) | Linked List |
