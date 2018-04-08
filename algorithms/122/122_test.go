@@ -1,8 +1,8 @@
 package algorithms
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 type question struct {
@@ -48,7 +48,6 @@ func Test122(t *testing.T) {
 				0,
 			},
 		},
-
 	}
 
 	for _, q := range qs {
