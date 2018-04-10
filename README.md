@@ -100,6 +100,7 @@
 |136 | [Single Number](algorithms/136/README.md) | Hash Table, Bit Manipulation |
 |203 | [Remove Linked List Elements](algorithms/203/README.md) | Linked List |
 |206 | [Reverse Linked List](algorithms/206/README.md) | Linked List |
+|207 | [Course Schedule](algorithms/207/README.md) | Depth-first Search, Breadth-first Search, Graph, Topological Sort |
 |257 | [Binary Tree Paths](algorithms/257/README.md) | Tree, Depth-first Search |
 
 ## Other
