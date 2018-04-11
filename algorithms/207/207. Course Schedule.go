@@ -13,6 +13,9 @@ func canFinish(numCourses int, prerequisites [][]int) bool {
 	isDAG := true
 	var helper func(node int)
 	helper = func(node int) {
+		if !isDAG {
+			return
+		}
 		color[node] = 1
 		for _, v := range m[node] {
 			switch color[v] {

@@ -55,6 +55,9 @@ func canFinish(numCourses int, prerequisites [][]int) bool {
 	isDAG := true
 	var helper func(node int)
 	helper = func(node int) {
+		if !isDAG {
+			return
+		}
 		color[node] = 1
 		for _, v := range m[node] {
 			switch color[v] {
@@ -74,6 +77,44 @@ func canFinish(numCourses int, prerequisites [][]int) bool {
 		helper(k)
 	}
 	return isDAG
+}
+
+```
+
+```go
+package algorithms
+
+func canFinish(numCourses int, prerequisites [][]int) bool {
+	in := make([]int, numCourses)
+	edge := make([][]int, numCourses)
+	for i := 0; i < len(prerequisites); i++ {
+		src, dest := prerequisites[i][1], prerequisites[i][0]
+		in[dest]++
+		edge[src] = append(edge[src], dest)
+	}
+	vertexTraversed := numCourses
+	queue := make([]int, 0, numCourses/2)
+	for i := 0; i < numCourses; i++ {
+		if in[i] == 0 {
+			queue = append(queue, i)
+		}
+	}
+	for len(queue) > 0 {
+		vertexTraversed--
+		front := queue[0]
+		queue = queue[1:]
+		for i := 0; i < len(edge[front]); i++ {
+			in[edge[front][i]]--
+			if in[edge[front][i]] == 0 {
+				queue = append(queue, edge[front][i])
+			}
+		}
+		edge[front] = []int{}
+	}
+	if vertexTraversed != 0 {
+		return false
+	}
+	return true
 }
 
 ```
