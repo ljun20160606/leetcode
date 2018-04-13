@@ -59,7 +59,6 @@ func Test189(t *testing.T) {
 				[]int{5, 6, 7, 1, 2, 3, 4},
 			},
 		},
-
 	}
 
 	for _, q := range qs {
