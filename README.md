@@ -103,6 +103,7 @@
 |206 | [Reverse Linked List](algorithms/206/README.md) | Linked List |
 |207 | [Course Schedule](algorithms/207/README.md) | Depth-first Search, Breadth-first Search, Graph, Topological Sort |
 |217 | [Contains Duplicate](algorithms/217/README.md) | Array, Hash Table |
+|219 | [Contains Duplicate II](algorithms/219/README.md) | Array, Hash Table |
 |257 | [Binary Tree Paths](algorithms/257/README.md) | Tree, Depth-first Search |
 
 ## Other

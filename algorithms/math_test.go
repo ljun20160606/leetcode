@@ -14,3 +14,7 @@ func TestMinOfTwo(t *testing.T) {
 	assert.Equal(t, 1, MinOfTwo(1, 2))
 	assert.Equal(t, 1, MinOfTwo(2, 1))
 }
+
+func TestAbs(t *testing.T) {
+	assert.Equal(t, 1, Abs(-1))
+}
