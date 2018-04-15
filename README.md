@@ -99,6 +99,7 @@
 |125 | [Valid Palindrome](algorithms/125/README.md) | Two Pointer, String |
 |136 | [Single Number](algorithms/136/README.md) | Hash Table, Bit Manipulation |
 |189 | [Rotate Array](algorithms/189/README.md) | Array |
+|199 | [Binary Tree Right Side View](algorithms/199/README.md) | Tree, Depth-first Search, Breadth-first Search |
 |203 | [Remove Linked List Elements](algorithms/203/README.md) | Linked List |
 |206 | [Reverse Linked List](algorithms/206/README.md) | Linked List |
 |207 | [Course Schedule](algorithms/207/README.md) | Depth-first Search, Breadth-first Search, Graph, Topological Sort |

@@ -8,30 +8,30 @@ func levelOrderBottom(root *TreeNode) [][]int {
 	if root == nil {
 		return nil
 	}
-	q := []*TreeNode{root}
-	levelLen := len(q)
-	var r [][]int
+	var result [][]int
 	var level []int
-	for len(q) != 0 {
+	queue := []*TreeNode{root}
+	levelLen := len(queue)
+	for len(queue) != 0 {
 		if levelLen == 0 {
-			r = append(r, level)
-			levelLen = len(q)
+			result = append(result, level)
+			levelLen = len(queue)
 			level = []int{}
 		}
-		n := q[0]
-		levelLen--
+		n := queue[0]
+		queue = queue[1:]
 		level = append(level, n.Val)
-		q = q[1:]
+		levelLen--
 		if n.Left != nil {
-			q = append(q, n.Left)
+			queue = append(queue, n.Left)
 		}
 		if n.Right != nil {
-			q = append(q, n.Right)
+			queue = append(queue, n.Right)
 		}
 	}
 	rr := [][]int{level}
-	for i := len(r) - 1; i >= 0; i-- {
-		rr = append(rr, r[i])
+	for i := len(result) - 1; i >= 0; i-- {
+		rr = append(rr, result[i])
 	}
 	return rr
 }
