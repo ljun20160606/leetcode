@@ -99,6 +99,7 @@
 |125 | [Valid Palindrome](algorithms/125/README.md) | Two Pointer, String |
 |136 | [Single Number](algorithms/136/README.md) | Hash Table, Bit Manipulation |
 |155 | [Min Stack](algorithms/155/README.md) | Stack, Design |
+|168 | [Excel Sheet Column Title](algorithms/168/README.md) | Math |
 |189 | [Rotate Array](algorithms/189/README.md) | Array |
 |199 | [Binary Tree Right Side View](algorithms/199/README.md) | Tree, Depth-first Search, Breadth-first Search |
 |203 | [Remove Linked List Elements](algorithms/203/README.md) | Linked List |
