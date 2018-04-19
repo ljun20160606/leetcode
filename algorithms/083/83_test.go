@@ -14,6 +14,10 @@ func Test83(t *testing.T) {
 		expected []int
 	}{
 		{
+			[]int{},
+			[]int{},
+		},
+		{
 			[]int{1, 1, 2},
 			[]int{1, 2},
 		},

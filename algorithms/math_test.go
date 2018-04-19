@@ -17,4 +17,5 @@ func TestMinOfTwo(t *testing.T) {
 
 func TestAbs(t *testing.T) {
 	assert.Equal(t, 1, Abs(-1))
+	assert.Equal(t, 1, Abs(1))
 }

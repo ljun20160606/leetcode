@@ -73,7 +73,7 @@ func isIntersect(a Interval, b Interval) bool {
 
 func merge(a Interval, b Interval) Interval {
 	if a.End < b.End {
-		return Interval{a.Start, b.End}
+		return Interval{Start: a.Start, End: b.End}
 	}
 	return a
 }

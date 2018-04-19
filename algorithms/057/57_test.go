@@ -105,6 +105,13 @@ func Test57(t *testing.T) {
 			},
 			},
 		},
+
+		{
+			para{[]Interval{
+				{1, 3},
+			}, Interval{0, 2}},
+			ans{[]Interval{{0, 3}}},
+		},
 	}
 
 	for _, q := range qs {

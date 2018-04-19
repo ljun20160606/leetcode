@@ -20,7 +20,7 @@ func insert(intervals []Interval, newInterval Interval) []Interval {
 	prev := newInterval
 	idx := 0
 	for idx < len(intervals) {
-		if intervals[idx].Start < prev.Start {
+		if prev.Start > intervals[idx].Start {
 			if isIntersect(intervals[idx], prev) {
 				prev = merge(intervals[idx], prev)
 			} else {
@@ -46,7 +46,7 @@ func isIntersect(a Interval, b Interval) bool {
 
 func merge(a Interval, b Interval) Interval {
 	if a.End < b.End {
-		return Interval{a.Start, b.End}
+		return Interval{Start: a.Start, End: b.End}
 	}
 	return a
 }

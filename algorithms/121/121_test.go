@@ -24,6 +24,11 @@ func Test121(t *testing.T) {
 	qs := []question{
 
 		{
+			para{[]int{}},
+			ans{0},
+		},
+
+		{
 			para{
 				[]int{7, 2, 1, 5, 3, 6, 4},
 			},
