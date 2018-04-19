@@ -104,6 +104,7 @@
 |199 | [Binary Tree Right Side View](algorithms/199/README.md) | Tree, Depth-first Search, Breadth-first Search |
 |203 | [Remove Linked List Elements](algorithms/203/README.md) | Linked List |
 |204 | [Count Primes](algorithms/204/README.md) | Hash Table, Math |
+|205 | [Isomorphic Strings](algorithms/205/README.md) | Hash Table |
 |206 | [Reverse Linked List](algorithms/206/README.md) | Linked List |
 |207 | [Course Schedule](algorithms/207/README.md) | Depth-first Search, Breadth-first Search, Graph, Topological Sort |
 |217 | [Contains Duplicate](algorithms/217/README.md) | Array, Hash Table |
