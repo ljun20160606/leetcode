@@ -3,9 +3,10 @@ package main
 import "strconv"
 
 type item struct {
-	ID     string
-	Title  string
-	Topics string
+	ID         string
+	Title      string
+	Topics     string
+	Difficulty string
 }
 
 type itemSlice []item

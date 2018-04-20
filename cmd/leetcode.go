@@ -119,21 +119,23 @@ func (l *leetcodeCli) AddCommand(command cli.Command) {
 }
 
 func (l *leetcodeCli) AddItem(q *question) {
-	for e := range l.items {
-		if l.items[e].ID == q.QuestionID {
-			return
-		}
-	}
-	l.lock.Lock()
 	var topics []string
 	for e := range q.TopicTags {
 		topics = append(topics, q.TopicTags[e].Name)
 	}
 	i := item{
-		ID:     q.QuestionID,
-		Title:  fmt.Sprintf("[%v](algorithms/%v/README.md)", q.QuestionTitle, q.FileName),
-		Topics: strings.Join(topics, ", "),
+		ID:         q.QuestionID,
+		Title:      fmt.Sprintf("[%v](algorithms/%v/README.md)", q.QuestionTitle, q.FileName),
+		Topics:     strings.Join(topics, ", "),
+		Difficulty: q.Difficulty,
 	}
+	for e := range l.items {
+		if l.items[e].ID == q.QuestionID {
+			l.items[e] = i
+			return
+		}
+	}
+	l.lock.Lock()
 	l.items = append(l.items, i)
 	l.lock.Unlock()
 }
