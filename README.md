@@ -104,6 +104,7 @@
 |168 | [Excel Sheet Column Title](algorithms/168/README.md) | Math |
 |189 | [Rotate Array](algorithms/189/README.md) | Array |
 |199 | [Binary Tree Right Side View](algorithms/199/README.md) | Tree, Depth-first Search, Breadth-first Search |
+|200 | [Number of Islands](algorithms/200/README.md) | Depth-first Search, Breadth-first Search, Union Find |
 |203 | [Remove Linked List Elements](algorithms/203/README.md) | Linked List |
 |204 | [Count Primes](algorithms/204/README.md) | Hash Table, Math |
 |205 | [Isomorphic Strings](algorithms/205/README.md) | Hash Table |
