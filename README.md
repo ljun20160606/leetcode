@@ -98,6 +98,7 @@
 |121 | [Best Time to Buy and Sell Stock](algorithms/121/README.md) | Array, Dynamic Programming | Easy |
 |122 | [Best Time to Buy and Sell Stock II](algorithms/122/README.md) | Array, Greedy | Easy |
 |125 | [Valid Palindrome](algorithms/125/README.md) | Two Pointers, String | Easy |
+|130 | [Surrounded Regions](algorithms/130/README.md) | Depth-first Search, Breadth-first Search, Union Find | Medium |
 |136 | [Single Number](algorithms/136/README.md) | Hash Table, Bit Manipulation | Easy |
 |155 | [Min Stack](algorithms/155/README.md) | Stack, Design | Easy |
 |165 | [Compare Version Numbers](algorithms/165/README.md) | String | Medium |
