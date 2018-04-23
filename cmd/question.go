@@ -54,21 +54,32 @@ func (q *question) WriteProblem(problemTpl string) error {
 		if err != nil {
 			return err
 		}
-		var cd codeDefinition
+		var cs []codeDefinition
 		b := *(*[]byte)(unsafe.Pointer(&q.CodeDefinition))
-		err = json.Unmarshal(b, &cd)
+		err = json.Unmarshal(b, &cs)
 		if err != nil {
 			return err
 		}
-		for i := range cd {
-			if cd[i].Value == "golang" {
-				err = tpl.Execute(writer, cd[i])
-				if err != nil {
-					return err
-				}
-				return nil
+		expect := []string{"golang", "cpp"}
+		definition := getCodeDefinition(cs, expect)
+		if definition == nil {
+			return errors.New("Not support " + strings.Join(expect, " or ") + ".")
+		}
+		err = tpl.Execute(writer, definition)
+		if err != nil {
+			return err
+		}
+		return nil
+	})
+}
+
+func getCodeDefinition(cs []codeDefinition, expect []string) *codeDefinition {
+	for i := range expect {
+		for j := range cs {
+			if cs[j].Value == expect[i] {
+				return &cs[j]
 			}
 		}
-		return errors.New("Not support golang.")
-	})
+	}
+	return nil
 }

@@ -17,7 +17,7 @@ type problem struct {
 	CategoryTitle             string        `json:"categoryTitle"`
 	SubmitURL                 string        `json:"submitUrl"`
 	InterpretURL              string        `json:"interpretUrl"`
-	CodeDefinition            string        `json:"codeDefinition"`
+	CodeDefinition            string        `json:"codeDefinitions"`
 	SampleTestCase            string        `json:"sampleTestCase"`
 	EnableTestMode            bool          `json:"enableTestMode"`
 	MetaData                  string        `json:"metaData"`
@@ -53,7 +53,7 @@ type stat struct {
 	QuestionID          int    `json:"question_id"`
 }
 
-type codeDefinition []struct {
+type codeDefinition struct {
 	Text        string `json:"text"`
 	Value       string `json:"value"`
 	DefaultCode string `json:"defaultCode"`

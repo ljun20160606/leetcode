@@ -101,6 +101,7 @@
 |125 | [Valid Palindrome](algorithms/125/README.md) | Two Pointers, String | Easy |
 |130 | [Surrounded Regions](algorithms/130/README.md) | Depth-first Search, Breadth-first Search, Union Find | Medium |
 |136 | [Single Number](algorithms/136/README.md) | Hash Table, Bit Manipulation | Easy |
+|141 | [Linked List Cycle](algorithms/141/README.md) | Linked List, Two Pointers | Easy |
 |155 | [Min Stack](algorithms/155/README.md) | Stack, Design | Easy |
 |165 | [Compare Version Numbers](algorithms/165/README.md) | String | Medium |
 |168 | [Excel Sheet Column Title](algorithms/168/README.md) | Math | Easy |
