@@ -63,6 +63,7 @@
 |44 | [Wildcard Matching](algorithms/044/README.md) | String, Dynamic Programming, Backtracking, Greedy | Hard |
 |46 | [Permutations](algorithms/046/README.md) | Backtracking | Medium |
 |48 | [Rotate Image](algorithms/048/README.md) | Array | Medium |
+|49 | [Group Anagrams](algorithms/049/README.md) | Hash Table, String | Medium |
 |53 | [Maximum Subarray](algorithms/053/README.md) | Array, Divide and Conquer, Dynamic Programming | Easy |
 |56 | [Merge Intervals](algorithms/056/README.md) | Array, Sort | Medium |
 |57 | [Insert Interval](algorithms/057/README.md) | Array, Sort | Hard |
