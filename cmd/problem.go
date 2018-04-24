@@ -17,7 +17,7 @@ type problem struct {
 	CategoryTitle             string        `json:"categoryTitle"`
 	SubmitURL                 string        `json:"submitUrl"`
 	InterpretURL              string        `json:"interpretUrl"`
-	CodeDefinition            string        `json:"codeDefinitions"`
+	CodeDefinition            string        `json:"codeDefinition"`
 	SampleTestCase            string        `json:"sampleTestCase"`
 	EnableTestMode            bool          `json:"enableTestMode"`
 	MetaData                  string        `json:"metaData"`
