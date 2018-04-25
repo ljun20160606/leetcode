@@ -68,6 +68,7 @@
 |56 | [Merge Intervals](algorithms/056/README.md) | Array, Sort | Medium |
 |57 | [Insert Interval](algorithms/057/README.md) | Array, Sort | Hard |
 |58 | [Length of Last Word](algorithms/058/README.md) | String | Easy |
+|61 | [Rotate List](algorithms/061/README.md) | Linked List, Two Pointers | Medium |
 |62 | [Unique Paths](algorithms/062/README.md) | Array, Dynamic Programming | Medium |
 |63 | [Unique Paths II](algorithms/063/README.md) | Array, Dynamic Programming | Medium |
 |64 | [Minimum Path Sum](algorithms/064/README.md) | Array, Dynamic Programming | Medium |
