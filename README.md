@@ -75,6 +75,7 @@
 |67 | [Add Binary](algorithms/067/README.md) | Math, String | Easy |
 |69 | [Sqrt(x)](algorithms/069/README.md) | Math, Binary Search | Easy |
 |70 | [Climbing Stairs](algorithms/070/README.md) | Dynamic Programming | Easy |
+|71 | [Simplify Path](algorithms/071/README.md) | String, Stack | Medium |
 |72 | [Edit Distance](algorithms/072/README.md) | String, Dynamic Programming | Hard |
 |78 | [Subsets](algorithms/078/README.md) | Array, Backtracking, Bit Manipulation | Medium |
 |81 | [Search in Rotated Sorted Array II](algorithms/081/README.md) | Array, Binary Search | Medium |
