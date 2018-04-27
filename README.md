@@ -105,6 +105,7 @@
 |136 | [Single Number](algorithms/136/README.md) | Hash Table, Bit Manipulation | Easy |
 |141 | [Linked List Cycle](algorithms/141/README.md) | Linked List, Two Pointers | Easy |
 |142 | [Linked List Cycle II](algorithms/142/README.md) | Linked List, Two Pointers | Medium |
+|144 | [Binary Tree Preorder Traversal](algorithms/144/README.md) | Stack, Tree | Medium |
 |155 | [Min Stack](algorithms/155/README.md) | Stack, Design | Easy |
 |165 | [Compare Version Numbers](algorithms/165/README.md) | String | Medium |
 |168 | [Excel Sheet Column Title](algorithms/168/README.md) | Math | Easy |
