@@ -24,6 +24,17 @@ func Test61(t *testing.T) {
 	ast := assert.New(t)
 
 	qs := []question{
+
+		{
+			para{
+				[]int{},
+				0,
+			},
+			ans{
+				[]int{},
+			},
+		},
+
 		{
 			para{
 				[]int{},
@@ -36,11 +47,11 @@ func Test61(t *testing.T) {
 
 		{
 			para{
-				[]int{},
-				0,
+				[]int{1, 2},
+				2,
 			},
 			ans{
-				[]int{},
+				[]int{1, 2},
 			},
 		},
 
