@@ -16,3 +16,7 @@ func (s *Stack) Pop() interface{} {
 	*s = (*s)[:end]
 	return r
 }
+
+func (s *Stack) Peek() interface{} {
+	return (*s)[len(*s)-1]
+}

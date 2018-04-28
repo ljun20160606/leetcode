@@ -33,3 +33,12 @@ func TestStack_Pop(t *testing.T) {
 
 	ast.Equal(1, stack.Pop())
 }
+
+func TestStack_Peek(t *testing.T) {
+	ast := assert.New(t)
+	stack := new(Stack)
+
+	stack.Push(1)
+
+	ast.Equal(1, stack.Peek())
+}

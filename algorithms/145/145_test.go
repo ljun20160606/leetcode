@@ -1,9 +1,9 @@
 package algorithms
 
 import (
-	"testing"
-	"github.com/stretchr/testify/assert"
 	"github.com/ljun20160606/leetcode/algorithms"
+	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 var tcs = []struct {
