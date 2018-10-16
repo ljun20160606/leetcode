@@ -6,7 +6,7 @@ branches:
   - master
 
 go:
-  - 1.10.x
+  - 1.11.x
 
 script:
   - bash ./test.sh

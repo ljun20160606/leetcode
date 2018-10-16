@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"errors"
 	"github.com/PuerkitoBio/goquery"
+	"github.com/ljun20160606/gox/fs"
 	"io"
 	"path/filepath"
 	"strings"
 	"text/template"
 	"unsafe"
-	"github.com/ljun20160606/go-lib/util/fs"
 )
 
 type question struct {

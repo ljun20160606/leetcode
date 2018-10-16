@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/kataras/iris/core/errors"
 	"github.com/ljun20160606/di"
+	"github.com/ljun20160606/gox/fs"
 	"github.com/ljun20160606/simplehttp"
 	"github.com/urfave/cli"
 	"gopkg.in/go-playground/pool.v3"
@@ -15,7 +16,6 @@ import (
 	"strings"
 	"sync"
 	"text/template"
-	"github.com/ljun20160606/go-lib/util/fs"
 )
 
 const (
