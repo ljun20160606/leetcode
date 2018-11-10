@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"errors"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/ljun20160606/gox/fs"
@@ -9,7 +8,6 @@ import (
 	"path/filepath"
 	"strings"
 	"text/template"
-	"unsafe"
 )
 
 type question struct {
@@ -38,7 +36,7 @@ func (q *question) WriteSolution(solutionTplPath string) error {
 			return err
 		}
 		s := solutionTemplate{
-			QuestionTitle: q.QuestionTitle,
+			QuestionTitle: q.Title,
 			Content:       document.Text(),
 		}
 		err = tpl.Execute(writer, s)
@@ -50,23 +48,24 @@ func (q *question) WriteSolution(solutionTplPath string) error {
 }
 
 func (q *question) WriteProblem(problemTpl string) error {
-	return fs.WriteFileNotExist(filepath.Join(q.DirPath, q.QuestionFrontendID+". "+q.QuestionTitle+".go"), func(writer io.Writer) error {
+	return fs.WriteFileNotExist(filepath.Join(q.DirPath, q.QuestionFrontendID+". "+q.Title+".go"), func(writer io.Writer) error {
 		tpl, err := template.ParseFiles(problemTpl)
 		if err != nil {
 			return err
 		}
-		var cs []codeDefinition
-		b := *(*[]byte)(unsafe.Pointer(&q.CodeDefinition))
-		err = json.Unmarshal(b, &cs)
-		if err != nil {
-			return err
+		languages := []Language{Go, Java}
+		snippet := getCodeSnippet(q.CodeSnippets, languages)
+		if snippet == nil {
+			var hint strings.Builder
+			for i := range languages {
+				hint.WriteString(languages[i].Lang)
+				if i != len(languages)-1 {
+					hint.WriteString(" or ")
+				}
+			}
+			return errors.New("Not support " + hint.String() + ".")
 		}
-		expect := []string{"golang", "cpp"}
-		definition := getCodeDefinition(cs, expect)
-		if definition == nil {
-			return errors.New("Not support " + strings.Join(expect, " or ") + ".")
-		}
-		err = tpl.Execute(writer, definition)
+		err = tpl.Execute(writer, snippet)
 		if err != nil {
 			return err
 		}
@@ -74,10 +73,10 @@ func (q *question) WriteProblem(problemTpl string) error {
 	})
 }
 
-func getCodeDefinition(cs []codeDefinition, expect []string) *codeDefinition {
+func getCodeSnippet(cs []codeSnippet, expect []Language) *codeSnippet {
 	for i := range expect {
 		for j := range cs {
-			if cs[j].Value == expect[i] {
+			if cs[j].Lang == expect[i].Lang {
 				return &cs[j]
 			}
 		}

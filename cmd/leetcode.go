@@ -22,74 +22,16 @@ const (
 	algorithms    = "algorithms"
 	csrftoken     = "csrftoken"
 	README        = "README.md"
-	LeetcodeQuery = `query getQuestionDetail($titleSlug: String!) {
-  isCurrentUserAuthenticated
-  question(titleSlug: $titleSlug) {
-    questionId
-    questionFrontendId
-    questionTitle
-    translatedTitle
-    questionTitleSlug
-    content
-    translatedContent
-    difficulty
-    stats
-    contributors
-    similarQuestions
-    discussUrl
-    mysqlSchemas
-    randomQuestionUrl
-    sessionId
-    categoryTitle
-    submitUrl
-    interpretUrl
-    codeDefinition
-    sampleTestCase
-    enableTestMode
-    metaData
-    enableRunCode
-    enableSubmit
-    judgerAvailable
-    infoVerified
-    envInfo
-    urlManager
-    article
-    questionDetailUrl
-    discussCategoryId
-    discussSolutionCategoryId
-    libraryUrl
-    companyTags {
-      name
-      slug
-      translatedName
-    }
-    topicTags {
-      name
-      slug
-      translatedName
-    }
-  }
-  interviewed {
-    interviewedUrl
-    companies {
-      id
-      name
-      slug
-    }
-    timeOptions {
-      id
-      name
-    }
-    stageOptions {
-      id
-      name
-    }
-  }
-  subscribeUrl
-  isPremium
-  loginUrl
-}`
+	LeetcodeQuery = "query question($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId\n    questionFrontendId\n    boundTopicId\n    title\n    content\n    translatedTitle\n    translatedContent\n    isPaidOnly\n    difficulty\n    likes\n    dislikes\n    isLiked\n    similarQuestions\n    contributors {\n      username\n      profileUrl\n      avatarUrl\n      __typename\n    }\n    langToValidPlayground\n    topicTags {\n      name\n      slug\n      translatedName\n      __typename\n    }\n    companyTagStats\n    codeSnippets {\n      lang\n      langSlug\n      code\n      __typename\n    }\n    stats\n    hints\n    solution {\n      canSeeDetail\n      __typename\n    }\n    status\n    sampleTestCase\n    metaData\n    judgerAvailable\n    judgeType\n    mysqlSchemas\n    enableRunCode\n    enableTestMode\n    envInfo\n    __typename\n  }\n}\n"
 )
+
+type Graphql struct {
+	OperationName string `json:"operationName"`
+	Variables     struct {
+		TitleSlug string `json:"titleSlug"`
+	} `json:"variables"`
+	Query string `json:"query"`
+}
 
 var (
 	lc     = &leetcodeCli{}
@@ -126,7 +68,7 @@ func (l *leetcodeCli) AddItem(q *question) {
 	}
 	i := item{
 		ID:         q.QuestionID,
-		Title:      fmt.Sprintf("[%v](algorithms/%v/README.md)", q.QuestionTitle, q.FileName),
+		Title:      fmt.Sprintf("[%v](algorithms/%v/README.md)", q.Title, q.FileName),
 		Topics:     strings.Join(topics, ", "),
 		Difficulty: q.Difficulty,
 	}
@@ -236,13 +178,18 @@ func (l *leetcodeCli) WriteLock() {
 func (l *leetcodeCli) queryGraphQL(referer, operationName, titleSlug string) (*graphQLResp, error) {
 	request := simplehttp.NewRequest(l.HttpClient)
 
-	resp := request.Get().SetUrl(l.Config.Graphql).
+	graphql := &Graphql{
+		OperationName: operationName,
+		Query:         LeetcodeQuery,
+		Variables: struct {
+			TitleSlug string `json:"titleSlug"`
+		}{TitleSlug: titleSlug},
+	}
+	resp := request.Post().SetUrl(l.Config.Graphql).
 		Head("referer", referer).
 		Head("x-csrftoken", l.xCsrftoken).
-		Head("content-type", "application/json, text/plain").
-		Query("query", LeetcodeQuery).
-		Query("operationName", operationName).
-		Query("variables", `{"titleSlug":"`+titleSlug+`"}`).
+		Head("content-type", "application/json").
+		SetJSON(graphql).
 		Send()
 	qlResponse := new(graphQLResp)
 	err := resp.JSON(qlResponse)

@@ -1,43 +1,42 @@
 package main
 
 type problem struct {
-	QuestionID                string        `json:"questionId"`
-	QuestionFrontendID        string        `json:"questionFrontendId"`
-	QuestionTitle             string        `json:"questionTitle"`
-	QuestionTitleSlug         string        `json:"questionTitleSlug"`
-	Content                   string        `json:"content"`
-	Difficulty                string        `json:"difficulty"`
-	Stats                     string        `json:"stats"`
-	Contributors              string        `json:"contributors"`
-	SimilarQuestions          string        `json:"similarQuestions"`
-	DiscussURL                string        `json:"discussUrl"`
-	MysqlSchemas              []interface{} `json:"mysqlSchemas"`
-	RandomQuestionURL         string        `json:"randomQuestionUrl"`
-	SessionID                 string        `json:"sessionId"`
-	CategoryTitle             string        `json:"categoryTitle"`
-	SubmitURL                 string        `json:"submitUrl"`
-	InterpretURL              string        `json:"interpretUrl"`
-	CodeDefinition            string        `json:"codeDefinition"`
-	SampleTestCase            string        `json:"sampleTestCase"`
-	EnableTestMode            bool          `json:"enableTestMode"`
-	MetaData                  string        `json:"metaData"`
-	EnableRunCode             bool          `json:"enableRunCode"`
-	EnableSubmit              bool          `json:"enableSubmit"`
-	JudgerAvailable           bool          `json:"judgerAvailable"`
-	InfoVerified              bool          `json:"infoVerified"`
-	EnvInfo                   string        `json:"envInfo"`
-	URLManager                string        `json:"urlManager"`
-	Article                   string        `json:"article"`
-	QuestionDetailURL         string        `json:"questionDetailUrl"`
-	DiscussCategoryID         string        `json:"discussCategoryId"`
-	DiscussSolutionCategoryID string        `json:"discussSolutionCategoryId"`
-	LibraryURL                interface{}   `json:"libraryUrl"`
-	CompanyTags               interface{}   `json:"companyTags"`
-	TopicTags                 []struct {
+	QuestionID            string        `json:"questionId"`
+	QuestionFrontendID    string        `json:"questionFrontendId"`
+	BoundTopicID          interface{}   `json:"boundTopicId"`
+	Title                 string        `json:"title"`
+	Content               string        `json:"content"`
+	TranslatedTitle       interface{}   `json:"translatedTitle"`
+	TranslatedContent     interface{}   `json:"translatedContent"`
+	IsPaidOnly            bool          `json:"isPaidOnly"`
+	Difficulty            string        `json:"difficulty"`
+	Likes                 int           `json:"likes"`
+	Dislikes              int           `json:"dislikes"`
+	IsLiked               interface{}   `json:"isLiked"`
+	SimilarQuestions      string        `json:"similarQuestions"`
+	Contributors          []interface{} `json:"contributors"`
+	LangToValidPlayground string        `json:"langToValidPlayground"`
+	TopicTags             []struct {
 		Name           string      `json:"name"`
 		Slug           string      `json:"slug"`
 		TranslatedName interface{} `json:"translatedName"`
+		Typename       string      `json:"__typename"`
 	} `json:"topicTags"`
+	CompanyTagStats interface{}   `json:"companyTagStats"`
+	CodeSnippets    []codeSnippet `json:"codeSnippets"`
+	Stats           string        `json:"stats"`
+	Hints           []interface{} `json:"hints"`
+	Solution        interface{}   `json:"solution"`
+	Status          interface{}   `json:"status"`
+	SampleTestCase  string        `json:"sampleTestCase"`
+	MetaData        string        `json:"metaData"`
+	JudgerAvailable bool          `json:"judgerAvailable"`
+	JudgeType       string        `json:"judgeType"`
+	MysqlSchemas    []interface{} `json:"mysqlSchemas"`
+	EnableRunCode   bool          `json:"enableRunCode"`
+	EnableTestMode  bool          `json:"enableTestMode"`
+	EnvInfo         string        `json:"envInfo"`
+	Typename        string        `json:"__typename"`
 }
 
 type stat struct {
@@ -53,8 +52,9 @@ type stat struct {
 	QuestionID          int    `json:"question_id"`
 }
 
-type codeDefinition struct {
-	Text        string `json:"text"`
-	Value       string `json:"value"`
-	DefaultCode string `json:"defaultCode"`
+type codeSnippet struct {
+	Lang     string `json:"lang"`
+	LangSlug string `json:"langSlug"`
+	Code     string `json:"code"`
+	Typename string `json:"__typename"`
 }

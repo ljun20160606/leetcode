@@ -17,7 +17,7 @@ func main() {
 	di.Start()
 	app := cli.NewApp()
 	app.Name = "leetcode"
-	app.Version = "0.1.0"
+	app.Version = "0.2.0"
 	app.Usage = "leetcode刷题辅助工具"
 	app.Commands = append(lc.Commands)
 	err := app.Run(os.Args)

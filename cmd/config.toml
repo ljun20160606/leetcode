@@ -1,5 +1,5 @@
 defaultLeetcodeJson = "leetcode.json"
-operationName = "getQuestionDetail"
+operationName = "question"
 leetcodeCom = "https://leetcode.com"
 graphql = "https://leetcode.com/graphql"
 problemsAllUrl = "https://leetcode.com/api/problems/all/"
