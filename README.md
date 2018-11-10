@@ -121,6 +121,7 @@
 |217 | [Contains Duplicate](algorithms/217/README.md) | Array, Hash Table | Easy |
 |219 | [Contains Duplicate II](algorithms/219/README.md) | Array, Hash Table | Easy |
 |257 | [Binary Tree Paths](algorithms/257/README.md) | Tree, Depth-first Search | Easy |
+|344 | [Reverse String](algorithms/344/README.md) | Two Pointers, String | Easy |
 |695 | [Max Area of Island](algorithms/695/README.md) | Array, Depth-first Search | Easy |
 |739 | [Daily Temperatures](algorithms/739/README.md) | Hash Table, Stack | Medium |
 

@@ -19,7 +19,7 @@ type ans struct {
 	one bool
 }
 
-func Test_Problem0219(t *testing.T) {
+func Test219(t *testing.T) {
 	ast := assert.New(t)
 
 	qs := []question{
