@@ -147,6 +147,12 @@ func (l *leetcodeCli) Gen(ids []int) {
 				return
 			}
 
+			// 生成题目 problem 的单元测试模版
+			err = q.WriteUnittest(l.Config.UnittestTpl)
+			if err != nil {
+				return
+			}
+
 			// readme添加item
 			l.AddItem(q)
 			return
@@ -172,6 +178,12 @@ func (l *leetcodeCli) WriteLock() {
 		logger.Println(err)
 		panic(err)
 	}
+}
+
+type graphQLResp struct {
+	Data struct {
+		Question problem `json:"question"`
+	} `json:"data"`
 }
 
 // 查询题目

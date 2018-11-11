@@ -1,0 +1,10 @@
+package algorithms
+
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
+
+func Test{{.ID}}(t *testing.T) {
+	ast := assert.New(t)
+}

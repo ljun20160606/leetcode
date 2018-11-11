@@ -16,6 +16,11 @@ type question struct {
 	DirPath  string
 }
 
+type solutionTemplate struct {
+	QuestionTitle string
+	Content       string
+}
+
 func newQuestion(problem *problem, dirPrefix string) *question {
 	fileName := offsetNumber(problem.QuestionID, '0', 3)
 	return &question{
@@ -82,4 +87,18 @@ func getCodeSnippet(cs []codeSnippet, expect []Language) *codeSnippet {
 		}
 	}
 	return nil
+}
+
+func (q *question) WriteUnittest(unittestTpl string) error {
+	return fs.WriteFileNotExist(filepath.Join(q.DirPath, q.QuestionFrontendID+"_test.go"), func(writer io.Writer) error {
+		tpl, err := template.ParseFiles(unittestTpl)
+		if err != nil {
+			return err
+		}
+		err = tpl.Execute(writer, map[string]interface{}{"ID": q.QuestionFrontendID})
+		if err != nil {
+			return err
+		}
+		return nil
+	})
 }

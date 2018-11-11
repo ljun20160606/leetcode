@@ -16,5 +16,6 @@ type config struct {
 	SolutionTpl         string `di:"#.solutionTpl"`
 	ProblemTpl          string `di:"#.problemTpl"`
 	ReadmeTpl           string `di:"#.readmeTpl"`
+	UnittestTpl         string `di:"#.unittestTpl"`
 	AlgorithmsLock      string `di:"#.algorithmsLock"`
 }
