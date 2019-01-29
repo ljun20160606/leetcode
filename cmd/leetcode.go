@@ -156,9 +156,8 @@ func (l *leetcodeCli) Gen(ids []int) {
 // 读取algorithms.json
 func (l *leetcodeCli) ReadLock() {
 	err := fs.ReadJSON(l.CmdConfig.Lock.Algorithms, &l.items)
-	if err != nil {
-		logger.Println(err)
-		panic(err)
+	if err != nil && !os.IsNotExist(err) {
+		logger.Fatal(err)
 	}
 }
 
@@ -166,8 +165,7 @@ func (l *leetcodeCli) ReadLock() {
 func (l *leetcodeCli) WriteLock() {
 	err := fs.WriteJSON(l.CmdConfig.Lock.Algorithms, &l.items)
 	if err != nil {
-		logger.Println(err)
-		panic(err)
+		logger.Fatal(err)
 	}
 }
 
@@ -209,7 +207,7 @@ func (l *leetcodeCli) ReadCatalog(path string, reGen bool) {
 	}
 	err := fs.ReadJSON(path, l.problems)
 	if err != nil {
-		panic(err)
+		logger.Fatal(err)
 	}
 }
 
@@ -218,11 +216,11 @@ func (l *leetcodeCli) WriteCatalog(path string) {
 	_ = fs.WriteFileNotExist(path, func(writer io.Writer) error {
 		b, err := simplehttp.NewRequest(l.HttpClient).Get().SetUrl(l.CmdConfig.Params.ProblemsAllURL).Send().Body()
 		if err != nil {
-			panic(err)
+			logger.Fatal(err)
 		}
 		_, err = writer.Write(b)
 		if err != nil {
-			panic(err)
+			logger.Fatal(err)
 		}
 		return nil
 	})
