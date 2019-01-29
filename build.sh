@@ -2,7 +2,7 @@
 
 name=leetcode-cli
 version=$1
-configPath=./cmd/config
+configPath=./cmd/.leetcode-cli
 input=./cmd
 output=./out/
 go=go
