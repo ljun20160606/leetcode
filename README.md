@@ -107,6 +107,7 @@
 |142 | [Linked List Cycle II](algorithms/142/README.md) | Linked List, Two Pointers | Medium |
 |144 | [Binary Tree Preorder Traversal](algorithms/144/README.md) | Stack, Tree | Medium |
 |145 | [Binary Tree Postorder Traversal](algorithms/145/README.md) | Stack, Tree | Hard |
+|146 | [LRU Cache](algorithms/146/README.md) | Design | Hard |
 |155 | [Min Stack](algorithms/155/README.md) | Stack, Design | Easy |
 |165 | [Compare Version Numbers](algorithms/165/README.md) | String | Medium |
 |168 | [Excel Sheet Column Title](algorithms/168/README.md) | Math | Easy |
