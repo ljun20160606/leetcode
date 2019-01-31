@@ -15,7 +15,7 @@ func merge(ins []algorithms.Interval) []algorithms.Interval {
 	if len(ins) == 0 {
 		return ins
 	}
-	sort.Sort(algorithms.Intervals(ins))
+	sort.Sort(algorithms.IntervalsStart(ins))
 	var r []algorithms.Interval
 	start, end := ins[0].Start, ins[0].End
 	for _, v := range ins {
