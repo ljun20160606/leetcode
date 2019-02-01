@@ -30,6 +30,7 @@
 | :--- | :----------------------------------------------------- | :------------------ |
 |      | [Ksum](algorithms/other/ksum.go)                       | Array, Two Pointers |
 |      | [0/1 knapsack](algorithms/other/knapsack%20problem.go) | Dynamic Programming |
+|      | [Number of non-overlapping intervals](algorithms/other/non-overlapping%20Intervals.go) | Greedy, Array, Sort |
 
 ## Cmd
 
