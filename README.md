@@ -124,6 +124,7 @@
 |257 | [Binary Tree Paths](algorithms/257/README.md) | Tree, Depth-first Search | Easy |
 |344 | [Reverse String](algorithms/344/README.md) | Two Pointers, String | Easy |
 |435 | [Non-overlapping Intervals](algorithms/435/README.md) | Greedy | Medium |
+|436 | [Find Right Interval](algorithms/436/README.md) | Binary Search | Medium |
 |695 | [Max Area of Island](algorithms/695/README.md) | Array, Depth-first Search | Easy |
 |739 | [Daily Temperatures](algorithms/739/README.md) | Hash Table, Stack | Medium |
 
