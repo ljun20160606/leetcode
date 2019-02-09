@@ -125,6 +125,7 @@
 |344 | [Reverse String](algorithms/344/README.md) | Two Pointers, String | Easy |
 |435 | [Non-overlapping Intervals](algorithms/435/README.md) | Greedy | Medium |
 |436 | [Find Right Interval](algorithms/436/README.md) | Binary Search | Medium |
+|547 | [Friend Circles](algorithms/547/README.md) | Depth-first Search, Union Find | Medium |
 |695 | [Max Area of Island](algorithms/695/README.md) | Array, Depth-first Search | Easy |
 |739 | [Daily Temperatures](algorithms/739/README.md) | Hash Table, Stack | Medium |
 
@@ -134,6 +135,7 @@
 | :--- | :----------------------------------------------------- | :------------------ |
 |      | [Ksum](algorithms/other/ksum.go)                       | Array, Two Pointers |
 |      | [0/1 knapsack](algorithms/other/knapsack%20problem.go) | Dynamic Programming |
+|      | [Number of non-overlapping intervals](algorithms/other/non-overlapping%20Intervals.go) | Greedy, Array, Sort |
 
 ## Cmd
 

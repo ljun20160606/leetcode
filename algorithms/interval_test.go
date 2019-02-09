@@ -42,3 +42,8 @@ func TestEndIntervals_Swap(t *testing.T) {
 		assert.Equal(t, intervals[1], Interval{0, 1})
 	})
 }
+
+func TestInt2sToIntervals(t *testing.T) {
+	int2s := [][]int{{2, 3}}
+	assert.Equal(t, []Interval{{2, 3}}, Int2sToIntervals(int2s))
+}
