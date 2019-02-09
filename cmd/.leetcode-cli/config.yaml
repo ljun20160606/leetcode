@@ -8,9 +8,9 @@ cmd:
   params:
     operation-name: question
     leetcode-com: https://leetcode.com
-    graphql: https://leetcode.com/graphql
-    problems-all-url: https://leetcode.com/api/problems/all/
-    description: https://leetcode.com/problems/%v/description/
+    graphql: /graphql
+    problems-all-url: /api/problems/all/
+    description: /problems/%v/description/
     lang: go
   template:
     solution: .leetcode-cli/solution.tpl.txt

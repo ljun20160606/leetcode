@@ -90,7 +90,7 @@ func (l *leetcodeCli) Gen(ids []int) {
 	for e := range stats {
 		stat := stats[e]
 		batch.Queue(func(wu pool.WorkUnit) (r interface{}, err error) {
-			descriptionUrl := fmt.Sprintf(l.CmdConfig.Params.Description, stat.QuestionTitleSlug)
+			descriptionUrl := l.CmdConfig.Params.LeetcodeCom + fmt.Sprintf(l.CmdConfig.Params.Description, stat.QuestionTitleSlug)
 			logger.Println("Fetch", stat.QuestionID, stat.QuestionTitle, descriptionUrl)
 			err = simplehttp.NewRequest(l.HttpClient).Get().SetUrl(descriptionUrl).Send().Error()
 			if err != nil {
@@ -186,7 +186,7 @@ func (l *leetcodeCli) queryGraphQL(referer, operationName, titleSlug string) (*g
 			TitleSlug string `json:"titleSlug"`
 		}{TitleSlug: titleSlug},
 	}
-	resp := request.Post().SetUrl(l.CmdConfig.Params.Graphql).
+	resp := request.Post().SetUrl(l.CmdConfig.Params.LeetcodeCom + l.CmdConfig.Params.Graphql).
 		Head("referer", referer).
 		Head("x-csrftoken", l.xCsrftoken).
 		Head("content-type", "application/json").
@@ -214,7 +214,7 @@ func (l *leetcodeCli) ReadCatalog(path string, reGen bool) {
 // 生成leetcode.json
 func (l *leetcodeCli) WriteCatalog(path string) {
 	_ = fs.WriteFileNotExist(path, func(writer io.Writer) error {
-		b, err := simplehttp.NewRequest(l.HttpClient).Get().SetUrl(l.CmdConfig.Params.ProblemsAllURL).Send().Body()
+		b, err := simplehttp.NewRequest(l.HttpClient).Get().SetUrl(l.CmdConfig.Params.LeetcodeCom + l.CmdConfig.Params.ProblemsAllURL).Send().Body()
 		if err != nil {
 			logger.Fatal(err)
 		}
