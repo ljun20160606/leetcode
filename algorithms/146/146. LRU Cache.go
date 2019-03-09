@@ -32,16 +32,13 @@ func (l *LRUCache) Put(key int, value int) {
 		l.list.MoveBefore(element, l.list.Front())
 		return
 	}
-	if l.list.Len()+1 <= l.capacity {
-		element := l.list.PushFront([]int{key, value})
-		l.cache[key] = element
-		return
+	if l.list.Len()+1 > l.capacity {
+		back := l.list.Back()
+		l.list.Remove(back)
+		delete(l.cache, back.Value.([]int)[0])
 	}
-	back := l.list.Back()
 	front := l.list.PushFront([]int{key, value})
 	l.cache[key] = front
-	l.list.Remove(back)
-	delete(l.cache, back.Value.([]int)[0])
 }
 
 /**

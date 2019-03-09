@@ -3,11 +3,12 @@ package main
 type problem struct {
 	QuestionID            string        `json:"questionId"`
 	QuestionFrontendID    string        `json:"questionFrontendId"`
-	BoundTopicID          interface{}   `json:"boundTopicId"`
+	BoundTopicID          int           `json:"boundTopicId"`
 	Title                 string        `json:"title"`
+	TitleSlug             string        `json:"titleSlug"`
 	Content               string        `json:"content"`
-	TranslatedTitle       interface{}   `json:"translatedTitle"`
-	TranslatedContent     interface{}   `json:"translatedContent"`
+	TranslatedTitle       string        `json:"translatedTitle"`
+	TranslatedContent     string        `json:"translatedContent"`
 	IsPaidOnly            bool          `json:"isPaidOnly"`
 	Difficulty            string        `json:"difficulty"`
 	Likes                 int           `json:"likes"`
@@ -17,10 +18,10 @@ type problem struct {
 	Contributors          []interface{} `json:"contributors"`
 	LangToValidPlayground string        `json:"langToValidPlayground"`
 	TopicTags             []struct {
-		Name           string      `json:"name"`
-		Slug           string      `json:"slug"`
-		TranslatedName interface{} `json:"translatedName"`
-		Typename       string      `json:"__typename"`
+		Name           string `json:"name"`
+		Slug           string `json:"slug"`
+		TranslatedName string `json:"translatedName"`
+		Typename       string `json:"__typename"`
 	} `json:"topicTags"`
 	CompanyTagStats interface{}   `json:"companyTagStats"`
 	CodeSnippets    []codeSnippet `json:"codeSnippets"`
