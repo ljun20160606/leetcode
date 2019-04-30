@@ -123,6 +123,7 @@
 |219 | [Contains Duplicate II](algorithms/219/README.md) | Array, Hash Table | Easy |
 |257 | [Binary Tree Paths](algorithms/257/README.md) | Tree, Depth-first Search | Easy |
 |344 | [Reverse String](algorithms/344/README.md) | Two Pointers, String | Easy |
+|347 | [Top K Frequent Elements](algorithms/347/README.md) | Hash Table, Heap | Medium |
 |435 | [Non-overlapping Intervals](algorithms/435/README.md) | Greedy | Medium |
 |436 | [Find Right Interval](algorithms/436/README.md) | Binary Search | Medium |
 |547 | [Friend Circles](algorithms/547/README.md) | Depth-first Search, Union Find | Medium |
