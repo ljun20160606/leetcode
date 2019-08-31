@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/kataras/iris/core/errors"
 	"github.com/ljun20160606/di"
 	"github.com/ljun20160606/gox/fs"
 	"github.com/ljun20160606/simplehttp"
-	"gopkg.in/go-playground/pool.v3"
+  "github.com/pkg/errors"
+  "gopkg.in/go-playground/pool.v3"
 	"io"
 	"log"
 	"net/url"
